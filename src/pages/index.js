@@ -1,118 +1,174 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
+import { MdOutlineTurnSlightLeft } from "react-icons/md";
+import Footer from "@/components/Footer";
+import { motion as m } from "framer-motion";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+const Home = ({
+  setToggle,
+  toggle,
+  active,
+  setActive,
+  theme,
+  setTheme,
+  language,
+  setLanguage,
+}) => {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div>
+      <Head>
+        {language ? (
+          <title>CarlosBaso/Home</title>
+        ) : (
+          <title>CarlosBaso/Inicio</title>
+        )}
+      </Head>
+      <div
+        className={
+          theme === false
+            ? "w-full bg-[#f9f9f9] h-[80vh]"
+            : "w-full bg-[#111111] h-[80vh]"
+        }
+      >
+        {/* DIV DE LA PANTALLA----------------------- */}
+        <div
+          className={
+            theme === false
+              ? "w-[86%] min-h-[96%] bg-[#0055ff] divShadow rounded-xl mx-auto text-white space flex flex-col"
+              : "w-[86%] min-h-[96%] bg-[#ff5100] rounded-xl mx-auto text-white space flex flex-col"
+          }
+        >
+          {/* FIGURA DE LA IZQUIERDA-ABAJO----------------------- */}
+          <div className="hidden sm:flex w-[75px] h-[75px] absolute left-[8.5%] bottom-[21.5%] trazo containerFloat1"></div>
+          {/* FIGURA DE LA IZQUIERDA-ARRIBA----------------------- */}
+          <div className="sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-white absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] containerFloat2 rounded-tl-full"></div>
+          {/* FIGURA DE LA DERECHA-ABAJO----------------------- */}
+          <div className="hidden sm:flex w-[37px] h-[37px] bg-white absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3">
+            <div
+              className={
+                theme === false
+                  ? "w-[75%] h-[75%] bg-[#0055ff] m-auto rounded-full"
+                  : "w-[75%] h-[75%] bg-[#ff5100] m-auto rounded-full"
+              }
+            ></div>
+          </div>
+          {/* FIGURA DE LA DERECHA-ARRIBA----------------------- */}
+          <div className="absolute sm:right-[9%] right-[15%] top-[21%] rotateSquare containerFloat4">
+            <div className="triangle"></div>
+          </div>
+
+          {/* DIV DEL HEADER----------------------- */}
+          <m.div
+            initial={{ y: "35%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+              type: "spring",
+              delay: 0,
+            }}
+            className="my-auto md:px-2 px-4 sm:pt-4"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            {/* DIV DEL HEADER GRANDE----------------------- */}
+            <div className="lg:text-[75px] font-semibold xl:flex xl:flex-col hidden">
+              <div className="w-full justify-center text-center flex">
+                <div className="lg:flex lg:h-[110px] lg:w-[110px] lg:mr-4 lg:mt-[-8px] hidden hand justify-center containerFloat1"></div>{" "}
+                <div>
+                  {language ? <div>Hello! I&apos;m </div> : <div>¡Hola! Soy </div>}
+                </div>
+                <div className="lg:flex lg:h-[170px] lg:w-[175px] lg:mt-[-20px] lg:ml-[-20px] lg:mr-[-15px] hidden face containerFloat5"></div>{" "}
+                <div>Carlos,</div>
+              </div>
+              <div className="w-full text-center lg:mt-[-48px]">
+                {language ? (
+                  <div>a Software Engineer.</div>
+                ) : (
+                  <div>Ingeniero de Software.</div>
+                )}
+              </div>
+            </div>
+
+            {/* DIV DEL HEADER GRANDE (MOVILES)----------------------- */}
+            {language ? (
+              <div className="text-center xl:hidden flex flex-col lg:text-[70px] md:text-[55px] sm:text-[50px] text-[31px] font-semibold">
+                <div>Hello! I&apos;m Carlos,</div>
+                <div>a Software Engineer</div>
+              </div>
+            ) : (
+              <div className="text-center xl:hidden flex flex-col lg:text-[70px] md:text-[55px] sm:text-[50px] text-[31px] font-semibold">
+                <div>¡Hola! Soy Carlos,</div>
+                <div>Ing. de Software</div>
+              </div>
+            )}
+
+            {/* DIV DEL HEADER PEQUEÑO----------------------- */}
+            <div className="lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center">
+              {language ? (
+                <div className="md:flex-col md:flex hidden ">
+                  <div>
+                    Find out how I&apos;ve applied my passion for technology!
+                  </div>
+                  <div>
+                    You can find my projects on Github or check my LinkedIn
+                    profile.
+                  </div>
+                </div>
+              ) : (
+                <div className="md:flex-col md:flex hidden">
+                  <div>
+                    ¡Descubre cómo he aplicado mi pasión por la tecnología!
+                  </div>
+                  <div>
+                    Puedes encontrar mis proyectos en Github o ver mi perfil de
+                    LinkedIn.
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* DIV DEL HEADER PEQUEÑO (MOVILES)----------------------- */}
+            <div className="px-2 md:text-[20px] text-[18px] font-light mt-[15px] text-center sm:px-10">
+              {language ? (
+                <div className="md:hidden flex">
+                  Find out how I&apos;ve applied my passion for technology! You can
+                  find my projects on Github or see my LinkedIn profile.
+                </div>
+              ) : (
+                <div className="md:hidden flex">
+                  ¡Descubre cómo he aplicado mi pasión por la tecnología! Puedes
+                  encontrar mis proyectos en Github o ver mi perfil de LinkedIn.
+                </div>
+              )}
+            </div>
+
+            {/* DIV DEL BOTON----------------------- */}
+            <div className=" w-full justify-center flex lg:pt-14 md:pt-20 pt-16 text-black">
+              <Link
+                href={"/Projects"}
+                onClick={() => {
+                  setActive("projects");
+                  toggle === false ? "" : setToggle(!toggle);
+                }}
+                className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-white rounded-md flex buttonShadow transitionButton"
+              >
+                {language ? (
+                  <div className="pt-[1px]">See My Works</div>
+                ) : (
+                  <div className="pt-[1px]">Ver Mis Trabajos</div>
+                )}
+
+                <div className="rotateIcon ml-1 mt-[0.5px] text-[25px]">
+                  <MdOutlineTurnSlightLeft />
+                </div>
+              </Link>
+            </div>
+          </m.div>
         </div>
       </div>
+      <Footer theme={theme} language={language} setLanguage={setLanguage} />
+    </div>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;

@@ -1,0 +1,88 @@
+const projects = [
+  {
+    name: "WEB DESIGN",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "greenBg",
+    colorTxt: "greenTxt",
+    id: 10,
+    key: 1,
+    delay: 0.2,
+  },
+  {
+    name: "SOFTWARE",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "orangeBg",
+    colorTxt: "orangeTxt",
+    id: 20,
+    key: 1,
+    delay: 0.4,
+  },
+  {
+    name: "OTHERS",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "yellowBg",
+    colorTxt: "yellowTxt",
+    id: 30,
+    key: 1,
+    delay: 0.6,
+  },
+  {
+    name: "OTHERS",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "yellowBg",
+    colorTxt: "yellowTxt",
+    id: 30,
+    key: 1,
+    delay: 0.8,
+  },
+  {
+    name: "WEB DESIGN",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "greenBg",
+    colorTxt: "greenTxt",
+    id: 10,
+    key: 1,
+    delay: 1,
+  },
+  {
+    name: "SOFTWARE",
+    title: "Coming soon...",
+    description: [
+      "I'm working hard behind the scenes to bring you ",
+      "new amazings projects! I can't wait ",
+      "to unveil all of them to you soon!",
+    ],
+    colorBg: "orangeBg",
+    colorTxt: "orangeTxt",
+    id: 20,
+    key: 1,
+    delay: 1.2,
+  },
+];
+
+export { projects };
