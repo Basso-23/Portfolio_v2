@@ -43,10 +43,12 @@ const CardExperience = ({
 }) => {
   return (
     <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
+      
       <div className="font-bold ml-1 mb-4 text-[18px]">{date}</div>
 
       <div className="flex">
-        <div className="bg-[#bd171700] ml-0">⚪</div>
+      {theme ? <div className="bg-[#06ff93] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div> : <div className="bg-[#ff007b] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>}
+        
         <div
           className={
             theme === false
@@ -165,15 +167,15 @@ const About = ({
                   <div className="pt-2">
                     {language ? (
                       <div>
-                        👋Hello! I&apos;m Carlos Baso, a multidisciplinary 🐻
-                        software engineer based in Panama City 🚕. I&apos;m very
-                        passionate about the work 💖 that i do.
+                        Hello! I&apos;m Carlos Baso, a multidisciplinary
+                        software engineer based in Panama City. I&apos;m very
+                        passionate about the work that i do.
                       </div>
                     ) : (
                       <div>
-                        ¡Hola! Soy Carlos Baso, un 🐻 ingeniero de software
-                        multidisciplinario viviendo en la ciudad de Panamá 🚕.
-                        Me apasiona mucho el trabajo 💖 que hago.
+                        ¡Hola! Soy Carlos Baso, un ingeniero de software
+                        multidisciplinario viviendo en la ciudad de Panamá.
+                        Me apasiona mucho el trabajo que hago.
                       </div>
                     )}
                   </div>
@@ -225,7 +227,7 @@ const About = ({
 
           {/* DIV DE LA MITAD DE ABAJO----------------------- */}
           <m.div
-            initial={{ y: "35%", opacity: 0 }}
+            initial={{ y: "19%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             transition={{
               duration: 1,
@@ -257,15 +259,15 @@ const About = ({
                     <div className="pt-2">
                       {language ? (
                         <div>
-                          I like the pleasure to work with 🏢 companies across a
-                          variety of industries. I&apos;m always interested in new ✨
-                          and exciting adventures 🧨.
+                          I like the pleasure to work with companies across a
+                          variety of industries. I&apos;m always interested in new
+                          and exciting adventures.
                         </div>
                       ) : (
                         <div>
-                          Me gusta tener el placer de trabajar con 🏢 empresas
+                          Me gusta tener el placer de trabajar con empresas
                           dentro de distintos sectores. Siempre me interesan las
-                          nuevas ✨ y emocionantes aventuras 🧨.
+                          nuevas y emocionantes aventuras.
                         </div>
                       )}
                     </div>
