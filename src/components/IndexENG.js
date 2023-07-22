@@ -3,7 +3,7 @@ const projects = [
     name: "OTHERS",
     title: "Portfolio",
     description:
-      "This is my portfolio where i showcase all my projects and also you can know me and my skills little bit better.",
+      "This is my portfolio, in where I showcase all my projects and also you can know me and my skills little bit better.",
     colorBg: "portfolioBg",
     colorTxt: "portfolioTxt",
     image: "portfolio",

@@ -3,7 +3,7 @@ const projects2 = [
     name: "OTROS",
     title: "Portafolio",
     description:
-      "Este es mi portafolio donde muestro todos mis proyectos y también puedes conocerme a mí y mis habilidades un poco mejor.",
+      "Este es mi portafolio, donde muestro todos mis proyectos y también puedes conocerme a mí y mis habilidades un poco mejor.",
     colorBg: "portfolioBg",
     colorTxt: "portfolioTxt",
     image: "portfolio",
