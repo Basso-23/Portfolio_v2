@@ -15,6 +15,10 @@ const ProjectCard = ({
   colorBg,
   theme,
   language,
+  image,
+  float,
+  linkP,
+  linkG,
 }) => {
   return (
     <m.div
@@ -49,8 +53,10 @@ const ProjectCard = ({
           {title}
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%] flex">
-          <div className="flex lg:h-[35vh] lg:w-[35vh] h-[35vh] w-[35vh] comingsoon containerFloat1 m-auto"></div>{" "}
+        <div className="w-[100%] flex ">
+          <div
+            className={`flex lg:h-[34vh] lg:w-[40vh] h-[34vh] w-[40vh] ${image} ${float}  m-auto rounded-md mb-[-15px]`}
+          ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] mt-2 text-[#797979]">
           <div className="pt-2">{description}</div>
@@ -66,12 +72,18 @@ const ProjectCard = ({
             }
           >
             {language ? (
-              <div className="cursor-pointer">Source Code</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Source Code
+              </a>
             ) : (
-              <div className="cursor-pointer">Código fuente</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Código fuente
+              </a>
             )}
           </div>
-          <div
+          <a
+            href={linkP}
+            target="_blank"
             className={`${colorBg} justify-center text-[15px] pl-7 pr-5 py-[14px] rounded-md flex buttonShadow cursor-pointer transitionButton`}
           >
             {language ? (
@@ -82,7 +94,7 @@ const ProjectCard = ({
             <div className="rotateIcon ml-1 mt-[0.5px]">
               <MdOutlineTurnSlightLeft size={"25px"} />
             </div>
-          </div>
+          </a>
           <div
             className={
               theme === false
@@ -91,9 +103,13 @@ const ProjectCard = ({
             }
           >
             {language ? (
-              <div className="cursor-pointer">Source Code</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Source Code
+              </a>
             ) : (
-              <div className="cursor-pointer">Código fuente</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Código fuente
+              </a>
             )}
           </div>
         </div>
@@ -110,6 +126,10 @@ const ProjectCard2 = ({
   colorBg,
   theme,
   language,
+  image,
+  float,
+  linkP,
+  linkG,
 }) => {
   return (
     <m.div
@@ -144,8 +164,10 @@ const ProjectCard2 = ({
           {title}
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%] flex">
-          <div className="flex lg:h-[35vh] lg:w-[35vh] h-[35vh] w-[35vh] comingsoon containerFloat1 m-auto"></div>{" "}
+        <div className="w-[100%] flex ">
+          <div
+            className={`flex lg:h-[34vh] lg:w-[40vh] h-[34vh] w-[40vh] ${image} ${float}  m-auto rounded-md mb-[-15px]`}
+          ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] mt-2 text-[#797979]">
           <div className="pt-2">{description}</div>
@@ -161,12 +183,18 @@ const ProjectCard2 = ({
             }
           >
             {language ? (
-              <div className="cursor-pointer">Source Code</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Source Code
+              </a>
             ) : (
-              <div className="cursor-pointer">Código fuente</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Código fuente
+              </a>
             )}
           </div>
-          <div
+          <a
+            href={linkP}
+            target="_blank"
             className={`${colorBg} justify-center text-[15px] pl-7 pr-5 py-[14px] rounded-md flex buttonShadow cursor-pointer transitionButton`}
           >
             {language ? (
@@ -177,7 +205,7 @@ const ProjectCard2 = ({
             <div className="rotateIcon ml-1 mt-[0.5px]">
               <MdOutlineTurnSlightLeft size={"25px"} />
             </div>
-          </div>
+          </a>
           <div
             className={
               theme === false
@@ -186,9 +214,13 @@ const ProjectCard2 = ({
             }
           >
             {language ? (
-              <div className="cursor-pointer">Source Code</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Source Code
+              </a>
             ) : (
-              <div className="cursor-pointer">Código fuente</div>
+              <a href={linkG} target="_blank" className="cursor-pointer">
+                Código fuente
+              </a>
             )}
           </div>
         </div>

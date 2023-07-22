@@ -38,6 +38,14 @@
   background-image: url(../assets/comingsoon.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+.portfolio {
+  background-image: url(../assets/portfolio.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .web {
@@ -572,6 +580,14 @@
   background-color: #ebc000;
 }
 
+.portfolioTxt {
+  color: #ff5100;
+}
+
+.portfolioBg {
+  background-color: #ff5100;
+}
+
 .blueTxt {
   color: #347dfa;
 }
@@ -784,9 +800,3 @@
 .toggleSwitch:hover {
   background-color: rgb(61, 61, 61);
 }
-
-
-
-
-
-
