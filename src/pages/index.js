@@ -4,6 +4,12 @@ import Link from "next/link";
 import { MdOutlineTurnSlightLeft } from "react-icons/md";
 import Footer from "@/components/Footer";
 import { motion as m } from "framer-motion";
+import {
+  AiFillLinkedin,
+  AiFillGoogleCircle,
+  AiOutlineGithub,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 
 const Home = ({
   setToggle,
@@ -27,35 +33,54 @@ const Home = ({
       <div
         className={
           theme === false
-            ? "w-full bg-[#f9f9f9] h-[80vh]"
-            : "w-full bg-[#111111] h-[80vh]"
+            ? "w-full bg-[#f9f9f9] sm:h-[80vh] h-[178vw]"
+            : "w-full bg-[#111111] sm:h-[80vh] h-[178vw]"
         }
       >
         {/* DIV DE LA PANTALLA----------------------- */}
         <div
           className={
             theme === false
-              ? "w-[86%] min-h-[96%] bg-[#0055ff] divShadow rounded-xl mx-auto text-white space flex flex-col"
-              : "w-[86%] min-h-[96%] bg-[#ff5100] rounded-xl mx-auto text-white space flex flex-col"
+              ? "w-[86%] min-h-[96%] bg-[#ffffff] divShadow rounded-xl mx-auto text-white space flex flex-col"
+              : "w-[86%] min-h-[96%] bg-[#000000] rounded-xl mx-auto text-white space flex flex-col"
           }
         >
           {/* FIGURA DE LA IZQUIERDA-ABAJO----------------------- */}
-          <div className="hidden sm:flex w-[75px] h-[75px] absolute left-[8.5%] bottom-[21.5%] trazo containerFloat1"></div>
+          <div
+            className={
+              theme === false
+                ? "hidden sm:flex w-[75px] h-[75px]  absolute left-[8.5%] bottom-[21.5%] trazo3 containerFloat1"
+                : "hidden sm:flex w-[75px] h-[75px]  absolute left-[8.5%] bottom-[21.5%] trazo2 containerFloat1"
+            }
+          ></div>
           {/* FIGURA DE LA IZQUIERDA-ARRIBA----------------------- */}
-          <div className="sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-white absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] containerFloat2 rounded-tl-full"></div>
+
+          <div
+            className={
+              theme === false
+                ? "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
+                : "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
+            }
+          ></div>
           {/* FIGURA DE LA DERECHA-ABAJO----------------------- */}
-          <div className="hidden sm:flex w-[37px] h-[37px] bg-white absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3">
+          <div
+            className={
+              theme === false
+                ? "hidden sm:flex w-[37px] h-[37px] bg-[#0055ff] absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3"
+                : "hidden sm:flex w-[37px] h-[37px] bg-[#6561bf] absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3"
+            }
+          >
             <div
               className={
                 theme === false
-                  ? "w-[75%] h-[75%] bg-[#0055ff] m-auto rounded-full"
-                  : "w-[75%] h-[75%] bg-[#ff5100] m-auto rounded-full"
+                  ? "w-[75%] h-[75%] bg-[#ffffff] m-auto rounded-full"
+                  : "w-[75%] h-[75%] bg-[#000000] m-auto rounded-full"
               }
             ></div>
           </div>
           {/* FIGURA DE LA DERECHA-ARRIBA----------------------- */}
           <div className="absolute sm:right-[9%] right-[15%] top-[21%] rotateSquare containerFloat4">
-            <div className="triangle"></div>
+            <div className={theme === false ? "triangle1" : "triangle2"}></div>
           </div>
 
           {/* DIV DEL HEADER----------------------- */}
@@ -68,14 +93,22 @@ const Home = ({
               type: "spring",
               delay: 0,
             }}
-            className="my-auto md:px-2 px-4 sm:pt-4"
+            className={
+              theme === false
+                ? "my-auto md:px-2 px-4 sm:pt-4 text-black"
+                : "my-auto md:px-2 px-4 sm:pt-4 text-white"
+            }
           >
             {/* DIV DEL HEADER GRANDE----------------------- */}
             <div className="lg:text-[75px] font-semibold xl:flex xl:flex-col hidden">
               <div className="w-full justify-center text-center flex">
-                <div className="lg:flex lg:h-[110px] lg:w-[110px] lg:mr-4 lg:mt-[-8px] hidden hand justify-center containerFloat1"></div>{" "}
+                <div className="lg:flex lg:h-[115px] lg:w-[115px] lg:mr-4 lg:mt-[-8px] hidden hand justify-center containerFloat1"></div>{" "}
                 <div>
-                  {language ? <div>Hello! I&apos;m </div> : <div>¡Hola! Soy </div>}
+                  {language ? (
+                    <div>Hello! I&apos;m </div>
+                  ) : (
+                    <div>¡Hola! Soy </div>
+                  )}
                 </div>
                 <div className="lg:flex lg:h-[170px] lg:w-[175px] lg:mt-[-20px] lg:ml-[-20px] lg:mr-[-15px] hidden face containerFloat5"></div>{" "}
                 <div>Carlos,</div>
@@ -128,11 +161,11 @@ const Home = ({
             </div>
 
             {/* DIV DEL HEADER PEQUEÑO (MOVILES)----------------------- */}
-            <div className="px-2 md:text-[20px] text-[18px] font-light mt-[15px] text-center sm:px-10">
+            <div className="px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10">
               {language ? (
                 <div className="md:hidden flex">
-                  Find out how I&apos;ve applied my passion for technology! You can
-                  find my projects on Github or see my LinkedIn profile.
+                  Find out how I&apos;ve applied my passion for technology! You
+                  can find my projects on Github or see my LinkedIn profile.
                 </div>
               ) : (
                 <div className="md:hidden flex">
@@ -143,15 +176,20 @@ const Home = ({
             </div>
 
             {/* DIV DEL BOTON----------------------- */}
-            <div className=" w-full justify-center flex lg:pt-14 md:pt-20 pt-16 text-black">
-              <Link
+            <div className=" w-full justify-center flex pt-[4vh] text-white">
+            <Link
                 href={"/Projects"}
                 onClick={() => {
                   setActive("projects");
                   toggle === false ? "" : setToggle(!toggle);
                 }}
-                className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-white rounded-md flex buttonShadow transitionButton"
+                className={
+                  theme === false
+                    ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
+                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
+                }
               >
+                <div className="flex px-3">
                 {language ? (
                   <div className="pt-[1px]">See My Works</div>
                 ) : (
@@ -161,12 +199,66 @@ const Home = ({
                 <div className="rotateIcon ml-1 mt-[0.5px] text-[25px]">
                   <MdOutlineTurnSlightLeft />
                 </div>
+                </div>
               </Link>
+            </div>
+            <div className="gap-6 flex justify-center mt-[6vh] pb-[3vh] ">
+              <a href="mailto:carlos.baso23@gmail.com" target="_blank">
+                <AiFillGoogleCircle className="cursor-pointer text-[40px] click transition-all" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/carlos-baso-4b90b7270/"
+                target="_blank"
+              >
+                <AiFillLinkedin className="cursor-pointer text-[40px] click transition-all" />
+              </a>
+              <a href="https://github.com/Basso-23" target="_blank">
+                <AiOutlineGithub className="cursor-pointer  text-[40px] click transition-all" />
+              </a>
+              <a
+                href="https://www.instagram.com/carlos.basso_/"
+                target="_blank"
+              >
+                <AiOutlineInstagram className="cursor-pointer text-[40px] click transition-all" />
+              </a>
             </div>
           </m.div>
         </div>
       </div>
-      <Footer theme={theme} language={language} setLanguage={setLanguage} />
+      
+      {/* DIV DEL FOOTER------------------------------------------------------------------------------------------- */}
+      <div className={theme === false ? "bg-[#f9f9f9] " : "bg-[#111111] "}>
+        <div
+          className={
+            theme === false
+              ? "w-[86%] text-[#000000] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
+              : "w-[86%] text-[#bcbcbc] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
+          }
+        >
+          <div className="w-full text-[16px] md:flex ">
+            {language ? (
+              <div>©2023 CarlosBaso. All rights reserved.</div>
+            ) : (
+              <div>©2023 CarlosBaso. Todos los derechos reservados.</div>
+            )}
+
+            <div className="xl:flex hidden">
+              <div
+                onClick={() => {
+                  setLanguage(true);
+                }}
+                className="ml-4 w-[35px] h-[23px] click transition-all cursor-pointer eng rounded-sm"
+              ></div>
+              <div
+                onClick={() => {
+                  setLanguage(false);
+                }}
+                className="ml-3 w-[36px] h-[24px] click transition-all cursor-pointer esp  rounded-sm"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

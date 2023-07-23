@@ -56,13 +56,21 @@ const CardSkills = ({
           <div
             className={
               theme === false
-                ? "text-[#000] border-b-2 border-[#797979] pb-2 font-bold text-[21px]"
-                : "text-[#fff] border-b-2 border-[#797979] pb-2 font-bold text-[21px]"
+                ? "text-[#000] border-b-2 border-[#797979] pb-2 font-bold text-[21px] space"
+                : "text-[#fff] border-b-2 border-[#797979] pb-2 font-bold text-[21px] space"
             }
           >
             {name}
           </div>
-          <div className="text-[16.5px] pt-4">{description}</div>
+          <div
+            className={
+              theme === false
+                ? "text-[16.5px] pt-4 font-light space text-[#000]"
+                : "text-[16.5px] pt-4 font-light space text-[#fff]"
+            }
+          >
+            {description}
+          </div>
         </div>
       </div>
     </div>
@@ -123,7 +131,7 @@ const Skills = ({
               )}
             </div>
 
-            <div className="sm:text-[19px] text-[18px]">
+            <div className="sm:text-[19px] text-[18px] font-light ">
               {language ? (
                 <div className="pt-2">
                   Willing to learn new tools and programming languages to
@@ -149,7 +157,7 @@ const Skills = ({
                 className={
                   theme === false
                     ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow transitionButton"
-                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff651e] text-white rounded-md flex buttonShadow transitionButton"
+                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton"
                 }
               >
                 {language ? (

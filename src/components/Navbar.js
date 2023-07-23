@@ -182,7 +182,7 @@ const Navbar = ({
           className={
             theme === false
               ? "xl:flex text-[14.5px] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-md cursor-pointer transition-all font-bold hover:bg-[#0055ff] hover:text-white"
-              : "xl:flex text-[14.5px] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-md cursor-pointer transition-all font-bold hover:bg-[#ff651e] hover:text-white"
+              : "xl:flex text-[14.5px] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-md cursor-pointer transition-all font-bold hover:bg-[#ff5100] hover:text-white"
           }
         >
           {language ? <div>Contact Me</div> : <div>Contáctame</div>}

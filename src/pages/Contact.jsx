@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { MdOutlineTurnSlightLeft } from "react-icons/md";
 import {
@@ -19,6 +19,29 @@ const Contact = ({
   language,
   setLanguage,
 }) => {
+  const [resume, setResume] = useState(
+    "https://drive.google.com/file/d/1O2gmqslUaGKqcvuj-d_cBgdJP1XEpCw4/view?usp=drive_link"
+  );
+
+  useEffect(() => {
+    {
+      /* INGLES ---------------------------------*/
+    }
+    if (language === true) {
+      setResume(
+        "https://drive.google.com/file/d/1O2gmqslUaGKqcvuj-d_cBgdJP1XEpCw4/view?usp=drive_link"
+      );
+    }
+    {
+      /* ESPAÑOL ---------------------------------*/
+    }
+    if (language === false) {
+      setResume(
+        "https://drive.google.com/file/d/1xK_8f4Jdlcjvw8a87wCpgfKEqfCBmR3O/view?usp=drive_link"
+      );
+    }
+  }, [language]);
+
   return (
     <div
       className={
@@ -37,8 +60,8 @@ const Contact = ({
       <div
         className={
           theme === false
-            ? "w-full bg-[#f9f9f9] h-[80vh]"
-            : "w-full bg-[#111111] h-[80vh]"
+            ? "w-full bg-[#f9f9f9] sm:h-[80vh] h-[178vw]"
+            : "w-full bg-[#111111] sm:h-[80vh] h-[178vw]"
         }
       >
         {/* DIV DE LA PANTALLA----------------------- */}
@@ -122,7 +145,7 @@ const Contact = ({
                 ) : (
                   <div>Trabajemos juntos</div>
                 )}
-                <div className="xl:flex lg:h-[110px] lg:w-[110px] lg:ml-2 lg:mt-[-8px] hidden hand2 justify-center containerxFloat2"></div>{" "}
+                <div className="xl:flex lg:h-[115px] lg:w-[115px] lg:ml-2 lg:mt-[-8px] hidden hand2 justify-center containerxFloat2"></div>{" "}
               </div>
             </div>
 
@@ -161,7 +184,7 @@ const Contact = ({
             {/* DIV DEL BOTON----------------------- */}
             <div className=" w-full justify-center flex pt-[6vh] text-white">
               <a
-                href="https://drive.google.com/file/d/1xobka4RYzF2uOQ88NAwLD58Jg8_CVkHb/view?usp=sharing"
+                href={resume}
                 target="_blank"
                 className={
                   theme === false

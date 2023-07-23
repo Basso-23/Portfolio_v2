@@ -676,22 +676,22 @@
 }
 
 .filterButtons1 {
-  @apply md:w-[19vh] w-[35vh] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow  cursor-pointer text-center;
+  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons1:hover {
   color: white;
-  background-color: #ff651e;
+  background-color: #ff5100;
 }
 
 .filterActive1 {
   color: white;
-  background-color: #ff651e;
-  @apply md:w-[19vh] w-[35vh] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  background-color: #ff5100;
+  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons2 {
-  @apply md:w-[19vh] w-[35vh] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons2:hover {
@@ -702,7 +702,7 @@
 .filterActive2 {
   color: white;
   background-color: #0055ff;
-  @apply md:w-[19vh] w-[35vh] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .activeColor1 {

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { MdOutlineTurnSlightLeft } from "react-icons/md";
 import Footer from "@/components/Footer";
 import { motion as m } from "framer-motion";
-import alien from "../assets/alien.png"
+import alien from "../assets/alien.png";
 
 {
   /* ESTRUCTURA DEL CONTENEDOR DE LOS LENGUAJES----------------------- */
@@ -43,12 +43,15 @@ const CardExperience = ({
 }) => {
   return (
     <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
-      
       <div className="font-bold ml-1 mb-4 text-[18px]">{date}</div>
 
       <div className="flex">
-      {theme ? <div className="bg-[#06ff93] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div> : <div className="bg-[#ff007b] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>}
-        
+        {theme ? (
+          <div className="bg-[#06ff93] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>
+        ) : (
+          <div className="bg-[#ff007b] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>
+        )}
+
         <div
           className={
             theme === false
@@ -65,7 +68,7 @@ const CardExperience = ({
           <div className="ml-[-51.5px] text-[#797979] font-normal">
             <div className=" border-l-2 border-[#565656] sm:text-[16px] text-[15px]">
               <div className="ml-[30px] pt-2 pb-12">
-                <div className="text-[17px]">{description}</div>
+                <div className="text-[17px] font-light ">{description}</div>
                 <div className="flex flex-wrap gap-x-6 gap-y-4 mt-6">
                   <Languages name={language1} theme={theme} />
                   <Languages name={language2} theme={theme} />
@@ -73,7 +76,7 @@ const CardExperience = ({
                 </div>
               </div>
               <div className="ml-[30px] flex mt-[-15px] text-[17px]">
-                {language ? <div>Company:</div> : <div>Compañia:</div>}
+                {language ? <div>Company:</div> : <div>Compañía:</div>}
                 <a
                   href={link}
                   target="_blank"
@@ -104,6 +107,29 @@ const About = ({
   language,
   setLanguage,
 }) => {
+  const [resume, setResume] = useState(
+    "https://drive.google.com/file/d/1O2gmqslUaGKqcvuj-d_cBgdJP1XEpCw4/view?usp=drive_link"
+  );
+
+  useEffect(() => {
+    {
+      /* INGLES ---------------------------------*/
+    }
+    if (language === true) {
+      setResume(
+        "https://drive.google.com/file/d/1O2gmqslUaGKqcvuj-d_cBgdJP1XEpCw4/view?usp=drive_link"
+      );
+    }
+    {
+      /* ESPAÑOL ---------------------------------*/
+    }
+    if (language === false) {
+      setResume(
+        "https://drive.google.com/file/d/1xK_8f4Jdlcjvw8a87wCpgfKEqfCBmR3O/view?usp=drive_link"
+      );
+    }
+  }, [language]);
+
   return (
     <div>
       <Head>
@@ -163,23 +189,23 @@ const About = ({
                   )}
                 </div>
 
-                <div className="sm:text-[19px] text-[18px]">
+                <div className="sm:text-[19px] text-[18px] font-light ">
                   <div className="pt-2">
                     {language ? (
                       <div>
                         Hello! I&apos;m Carlos Baso, a multidisciplinary
                         software engineer based in Panama City. I&apos;m very
-                        passionate about the work that i do.
+                        passionate about the work that I do.
                       </div>
                     ) : (
                       <div>
                         ¡Hola! Soy Carlos Baso, un ingeniero de software
-                        multidisciplinario viviendo en la ciudad de Panamá.
-                        Me apasiona mucho el trabajo que hago.
+                        multidisciplinario viviendo en la ciudad de Panamá. Me
+                        apasiona mucho el trabajo que hago.
                       </div>
                     )}
                   </div>
-                  <div className="pt-4 sm:text-[17px] text-[16px]">
+                  <div className="pt-4 sm:text-[18px] text-[17px] font-light ">
                     {language ? (
                       <div>
                         I feel more than comfortable learning from my teammates
@@ -208,7 +234,7 @@ const About = ({
                     className={
                       theme === false
                         ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow transitionButton"
-                        : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff651e] text-white rounded-md flex buttonShadow transitionButton"
+                        : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton"
                     }
                   >
                     {language ? (
@@ -255,13 +281,13 @@ const About = ({
                     )}
                   </div>
 
-                  <div className="sm:text-[19px] text-[18px]">
+                  <div className="sm:text-[19px] text-[18px] font-light ">
                     <div className="pt-2">
                       {language ? (
                         <div>
                           I like the pleasure to work with companies across a
-                          variety of industries. I&apos;m always interested in new
-                          and exciting adventures.
+                          variety of industries. I&apos;m always interested in
+                          new and exciting adventures.
                         </div>
                       ) : (
                         <div>
@@ -276,12 +302,12 @@ const About = ({
                   {/* DIV DEL BOTON See All Projects----------------------- */}
                   <div className="w-full flex pt-10 text-black ">
                     <a
-                      href="https://drive.google.com/file/d/1xobka4RYzF2uOQ88NAwLD58Jg8_CVkHb/view?usp=sharing"
+                      href={resume}
                       target="_blank"
                       className={
                         theme === false
                           ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff]  text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
-                          : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff651e] text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
+                          : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
                       }
                     >
                       {language ? (
@@ -309,8 +335,8 @@ const About = ({
                 link="https://pidepaya.com/"
                 description={
                   language
-                    ? "Developing the functionality and the front-end for a delivery app using JavaScript, Firebase for authentication, and frameworks such as React Native."
-                    : "Desarrollando las funcionalidades y el front-end para un delivery app usando JavaScript, Firebase para autenticación y frameworks como React Native."
+                    ? "Managed and developed the functionalities and the front-end for a delivery app using JavaScript, Firebase for authentication, and frameworks such as React Native."
+                    : "Administré y desarrollé las funcionalidades y el front-end para un delivery app usando JavaScript, Firebase para autenticación y frameworks como React Native."
                 }
                 language1="React Native"
                 language2="Javascript"

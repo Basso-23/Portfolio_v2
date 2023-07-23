@@ -39,15 +39,15 @@ const ProjectCard = ({
       {/* DIV DEL LA INFORMACION----------------------- */}
       <div className="lg:py-8 lg:px-[60px] p-8 md:mx-auto w-[100%]">
         <div
-          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-6`}
+          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-0 flex`}
         >
-          {name}
+          <div className="flex rounded-3xl">{name}</div>
         </div>
         <div
           className={
             theme === false
-              ? "font-semibold sm:text-[38px] text-[28px] mt-2 text-black"
-              : "font-semibold sm:text-[38px] text-[28px] mt-2 text-white"
+              ? "font-semibold sm:text-[38px] text-[28px] mt-4 text-black"
+              : "font-semibold sm:text-[38px] text-[28px] mt-4 text-white"
           }
         >
           {title}
@@ -55,15 +55,15 @@ const ProjectCard = ({
         {/* DIV DEL LA IMAGEN----------------------- */}
         <div className="w-[100%] flex ">
           <div
-            className={`flex lg:h-[34vh] lg:w-[40vh] h-[34vh] w-[40vh] ${image} ${float}  m-auto rounded-md mb-[-15px]`}
+            className={`flex sm:h-[34vh] sm:w-[40vh] h-[75vw] w-[70vw] ${image} ${float}  m-auto rounded-md mb-[-15px] mt-[-15px]`}
           ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] mt-2 text-[#797979]">
-          <div className="pt-2">{description}</div>
+          <div className="pt-2 font-light ">{description}</div>
         </div>
 
         {/* DIV DEL BOTON See Projects----------------------- */}
-        <div className="w-full md:flex text-white md:pt-8">
+        <div className="w-full md:flex text-white md:pt-12 pt-4">
           <div
             className={
               theme === false
@@ -150,15 +150,15 @@ const ProjectCard2 = ({
       {/* DIV DEL LA INFORMACION----------------------- */}
       <div className="lg:py-8 lg:px-[60px] p-8 md:mx-auto w-[100%]">
         <div
-          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-6`}
+          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-0 flex`}
         >
-          {name}
+          <div className="flex rounded-3xl">{name}</div>
         </div>
         <div
           className={
             theme === false
-              ? "font-semibold sm:text-[38px] text-[28px] mt-2 text-black"
-              : "font-semibold sm:text-[38px] text-[28px] mt-2 text-white"
+              ? "font-semibold sm:text-[38px] text-[28px] mt-4 text-black"
+              : "font-semibold sm:text-[38px] text-[28px] mt-4 text-white"
           }
         >
           {title}
@@ -166,15 +166,15 @@ const ProjectCard2 = ({
         {/* DIV DEL LA IMAGEN----------------------- */}
         <div className="w-[100%] flex ">
           <div
-            className={`flex lg:h-[34vh] lg:w-[40vh] h-[34vh] w-[40vh] ${image} ${float}  m-auto rounded-md mb-[-15px]`}
+            className={`flex sm:h-[34vh] sm:w-[40vh] h-[75vw] w-[70vw] ${image} ${float}  m-auto rounded-md mb-[-15px] mt-[-15px]`}
           ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] mt-2 text-[#797979]">
-          <div className="pt-2">{description}</div>
+          <div className="pt-2 font-light ">{description}</div>
         </div>
 
         {/* DIV DEL BOTON See Projects----------------------- */}
-        <div className="w-full md:flex text-white md:pt-8">
+        <div className="w-full md:flex text-white md:pt-12 pt-4">
           <div
             className={
               theme === false
