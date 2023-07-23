@@ -65,8 +65,8 @@ const CardSkills = ({
           <div
             className={
               theme === false
-                ? "text-[16.5px] pt-4 font-light space text-[#000]"
-                : "text-[16.5px] pt-4 font-light space text-[#fff]"
+                ? "text-[16.5px] pt-4 space font-light text-[#000]"
+                : "text-[16.5px] pt-4 space font-light text-[#fff]"
             }
           >
             {description}

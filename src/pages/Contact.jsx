@@ -85,8 +85,8 @@ const Contact = ({
           <div
             className={
               theme === false
-                ? "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
-                : "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
+                ? "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
+                : "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
             }
           ></div>
           {/* FIGURA DE LA DERECHA-ABAJO----------------------- */}
@@ -106,7 +106,7 @@ const Contact = ({
             ></div>
           </div>
           {/* FIGURA DE LA DERECHA-ARRIBA----------------------- */}
-          <div className="absolute sm:right-[9%] right-[15%] top-[21%] rotateSquare containerFloat4">
+          <div className="absolute sm:right-[9%] sm:top-[21%] right-[14vw] top-[43vw] rotateSquare containerFloat4">
             <div className={theme === false ? "triangle1" : "triangle2"}></div>
           </div>
 
@@ -163,7 +163,13 @@ const Contact = ({
             )}
 
             {/* DIV DEL HEADER PEQUEÑO----------------------- */}
-            <div className="px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10">
+            <div
+              className={
+                theme === false
+                  ? "text-[#797979] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
+                  : "text-[#ffffff] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
+              }
+            >
               {language ? (
                 <div className="flex-col flex ">
                   <div>
@@ -182,7 +188,7 @@ const Contact = ({
             </div>
 
             {/* DIV DEL BOTON----------------------- */}
-            <div className=" w-full justify-center flex pt-[6vh] text-white">
+            <div className=" w-full justify-center flex sm:pt-[6vh] pt-[12vw] text-white">
               <a
                 href={resume}
                 target="_blank"
@@ -202,7 +208,7 @@ const Contact = ({
                 </div>
               </a>
             </div>
-            <div className="gap-6 flex justify-center mt-[6vh] pb-[3vh]">
+            <div className="gap-6 flex justify-center sm:mt-[6vh] sm:pb-[3vh] mt-[13.5vw] pb-[6.9vw]">
               <a href="mailto:carlos.baso23@gmail.com" target="_blank">
                 <AiFillGoogleCircle className="cursor-pointer text-[40px] click transition-all" />
               </a>

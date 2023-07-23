@@ -43,7 +43,7 @@ const CardExperience = ({
 }) => {
   return (
     <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
-      <div className="font-bold ml-1 mb-4 text-[18px]">{date}</div>
+      <div className="font-bold ml-1 mb-4 text-[18px] space">{date}</div>
 
       <div className="flex">
         {theme ? (
@@ -68,7 +68,7 @@ const CardExperience = ({
           <div className="ml-[-51.5px] text-[#797979] font-normal">
             <div className=" border-l-2 border-[#565656] sm:text-[16px] text-[15px]">
               <div className="ml-[30px] pt-2 pb-12">
-                <div className="text-[17px] font-light ">{description}</div>
+                <div className="text-[17px] font-light">{description}</div>
                 <div className="flex flex-wrap gap-x-6 gap-y-4 mt-6">
                   <Languages name={language1} theme={theme} />
                   <Languages name={language2} theme={theme} />
@@ -164,11 +164,11 @@ const About = ({
               <div
                 className={
                   theme === false
-                    ? "m-auto faceBorder1 sm:h-[50vh] sm:w-[50vh] h-[43vh] w-[50vh] flex"
-                    : "m-auto faceBorder2 sm:h-[50vh] sm:w-[50vh] h-[43vh] w-[50vh] flex"
+                    ? "m-auto faceBorder1 sm:h-[50vh] sm:w-[50vh] h-[89vw] w-[100vw] flex"
+                    : "m-auto faceBorder2 sm:h-[50vh] sm:w-[50vh] h-[89vw] w-[100vw] flex"
                 }
               >
-                <div className="flex h-[30vh] w-[30vh] face containerFloat1 m-auto"></div>{" "}
+                <div className="flex sm:h-[30vh] sm:w-[30vh] h-[60vw] w-[60vw] face containerFloat1 m-auto"></div>{" "}
               </div>
             </div>
 
@@ -178,8 +178,8 @@ const About = ({
                 <div
                   className={
                     theme === false
-                      ? "font-semibold sm:text-[48px] text-[32px] text-black lg:pt-0 pt-6"
-                      : "font-semibold sm:text-[48px] text-[32px] text-white lg:pt-0 pt-6"
+                      ? "font-semibold sm:text-[48px] text-[32px] text-black lg:pt-0 pt-6 space"
+                      : "font-semibold sm:text-[48px] text-[32px] text-white lg:pt-0 pt-6 space"
                   }
                 >
                   {language ? (
@@ -189,7 +189,7 @@ const About = ({
                   )}
                 </div>
 
-                <div className="sm:text-[19px] text-[18px] font-light ">
+                <div className="sm:text-[19px] text-[18px] font-light">
                   <div className="pt-2">
                     {language ? (
                       <div>
@@ -205,7 +205,7 @@ const About = ({
                       </div>
                     )}
                   </div>
-                  <div className="pt-4 sm:text-[18px] text-[17px] font-light ">
+                  <div className="pt-4 sm:text-[19px] text-[18px] ">
                     {language ? (
                       <div>
                         I feel more than comfortable learning from my teammates
@@ -270,8 +270,8 @@ const About = ({
                   <div
                     className={
                       theme === false
-                        ? "font-semibold sm:text-[48px] text-[32px] text-black"
-                        : "font-semibold sm:text-[48px] text-[32px] text-white"
+                        ? "font-semibold sm:text-[48px] text-[32px] text-black space"
+                        : "font-semibold sm:text-[48px] text-[32px] text-white space"
                     }
                   >
                     {language ? (
@@ -281,7 +281,7 @@ const About = ({
                     )}
                   </div>
 
-                  <div className="sm:text-[19px] text-[18px] font-light ">
+                  <div className="sm:text-[19px] text-[18px] font-light">
                     <div className="pt-2">
                       {language ? (
                         <div>
@@ -325,7 +325,7 @@ const About = ({
             </div>
 
             {/* DIV DE LA DERECHA ABAJO----------------------- */}
-            <div className="w-[100%] bg-[#98147b00] space lg:mt-[-40px] mt-[60px]">
+            <div className="w-[100%] bg-[#98147b00] lg:mt-[-40px] mt-[60px]">
               <CardExperience
                 theme={theme}
                 language={language}

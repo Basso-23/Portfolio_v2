@@ -43,7 +43,7 @@
 
 .portfolio {
   background-image: url(../assets/portfolio.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -436,7 +436,7 @@
 .triangle2,
 .triangle2:before,
 .triangle2:after {
-  @apply sm:w-[1.3em] sm:h-[1.3em] w-[2.1vh] h-[2.1vh];
+  @apply sm:w-[1.3em] sm:h-[1.3em] w-[4vw] h-[4vw];
   border-top-right-radius: 40%;
 }
 .triangle2 {
@@ -463,7 +463,7 @@
 .triangle1,
 .triangle1:before,
 .triangle1:after {
-  @apply sm:w-[1.3em] sm:h-[1.3em] w-[2.1vh] h-[2.1vh];
+  @apply sm:w-[1.3em] sm:h-[1.3em] w-[4vw] h-[4vw];
   border-top-right-radius: 40%;
 }
 .triangle1 {

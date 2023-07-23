@@ -58,8 +58,8 @@ const Home = ({
           <div
             className={
               theme === false
-                ? "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
-                : "sm:w-[30px] sm:h-[30px] w-[3.02vh] h-[3.02vh] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[6.5vh] top-[19.5vh] rounded-tl-full containerFloat2"
+                ? "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
+                : "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
             }
           ></div>
           {/* FIGURA DE LA DERECHA-ABAJO----------------------- */}
@@ -79,7 +79,7 @@ const Home = ({
             ></div>
           </div>
           {/* FIGURA DE LA DERECHA-ARRIBA----------------------- */}
-          <div className="absolute sm:right-[9%] right-[15%] top-[21%] rotateSquare containerFloat4">
+          <div className="absolute sm:right-[9%] sm:top-[21%] right-[14vw] top-[43vw] rotateSquare containerFloat4">
             <div className={theme === false ? "triangle1" : "triangle2"}></div>
           </div>
 
@@ -100,7 +100,7 @@ const Home = ({
             }
           >
             {/* DIV DEL HEADER GRANDE----------------------- */}
-            <div className="lg:text-[75px] font-semibold xl:flex xl:flex-col hidden">
+            <div className="lg:text-[75px] font-semibold xl:flex xl:flex-col hidden pt-14">
               <div className="w-full justify-center text-center flex">
                 <div className="lg:flex lg:h-[115px] lg:w-[115px] lg:mr-4 lg:mt-[-8px] hidden hand justify-center containerFloat1"></div>{" "}
                 <div>
@@ -124,7 +124,7 @@ const Home = ({
 
             {/* DIV DEL HEADER GRANDE (MOVILES)----------------------- */}
             {language ? (
-              <div className="text-center xl:hidden flex flex-col lg:text-[70px] md:text-[55px] sm:text-[50px] text-[31px] font-semibold">
+              <div className="pt-8 text-center xl:hidden flex flex-col lg:text-[70px] md:text-[55px] sm:text-[50px] text-[31px] font-semibold">
                 <div>Hello! I&apos;m Carlos,</div>
                 <div>a Software Engineer</div>
               </div>
@@ -136,7 +136,13 @@ const Home = ({
             )}
 
             {/* DIV DEL HEADER PEQUEÑO----------------------- */}
-            <div className="lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center">
+            <div
+              className={
+                theme === false
+                  ? "text-[#797979] lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center"
+                  : "text-[#ffffff] lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center"
+              }
+            >
               {language ? (
                 <div className="md:flex-col md:flex hidden ">
                   <div>
@@ -161,7 +167,13 @@ const Home = ({
             </div>
 
             {/* DIV DEL HEADER PEQUEÑO (MOVILES)----------------------- */}
-            <div className="px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10">
+            <div
+              className={
+                theme === false
+                  ? "text-[#797979] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
+                  : "text-[#ffffff] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
+              }
+            >
               {language ? (
                 <div className="md:hidden flex">
                   Find out how I&apos;ve applied my passion for technology! You
@@ -176,8 +188,8 @@ const Home = ({
             </div>
 
             {/* DIV DEL BOTON----------------------- */}
-            <div className=" w-full justify-center flex pt-[4vh] text-white">
-            <Link
+            <div className=" w-full justify-center flex sm:pt-[5vh] pt-[8vw] text-white">
+              <Link
                 href={"/Projects"}
                 onClick={() => {
                   setActive("projects");
@@ -190,19 +202,19 @@ const Home = ({
                 }
               >
                 <div className="flex px-3">
-                {language ? (
-                  <div className="pt-[1px]">See My Works</div>
-                ) : (
-                  <div className="pt-[1px]">Ver Mis Trabajos</div>
-                )}
+                  {language ? (
+                    <div className="pt-[1px]">See My Works</div>
+                  ) : (
+                    <div className="pt-[1px]">Ver Mis Trabajos</div>
+                  )}
 
-                <div className="rotateIcon ml-1 mt-[0.5px] text-[25px]">
-                  <MdOutlineTurnSlightLeft />
-                </div>
+                  <div className="rotateIcon ml-1 mt-[0.5px] text-[25px]">
+                    <MdOutlineTurnSlightLeft />
+                  </div>
                 </div>
               </Link>
             </div>
-            <div className="gap-6 flex justify-center mt-[6vh] pb-[3vh] ">
+            <div className="gap-6 flex justify-center sm:mt-[6vh] sm:pb-[3vh] mt-[13.5vw] pb-[6.9vw]">
               <a href="mailto:carlos.baso23@gmail.com" target="_blank">
                 <AiFillGoogleCircle className="cursor-pointer text-[40px] click transition-all" />
               </a>
@@ -225,7 +237,7 @@ const Home = ({
           </m.div>
         </div>
       </div>
-      
+
       {/* DIV DEL FOOTER------------------------------------------------------------------------------------------- */}
       <div className={theme === false ? "bg-[#f9f9f9] " : "bg-[#111111] "}>
         <div
