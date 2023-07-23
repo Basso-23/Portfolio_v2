@@ -41,46 +41,27 @@ const Home = ({
         <div
           className={
             theme === false
-              ? "w-[86%] min-h-[96%] bg-[#ffffff] divShadow rounded-xl mx-auto text-white space flex flex-col"
-              : "w-[86%] min-h-[96%] bg-[#000000] rounded-xl mx-auto text-white space flex flex-col"
+              ? "w-[86%] min-h-[96%] bg-[#0055ff] divShadow rounded-xl mx-auto text-white space flex flex-col"
+              : "w-[86%] min-h-[96%] bg-[#ff5100] rounded-xl mx-auto text-white space flex flex-col"
           }
         >
           {/* FIGURA DE LA IZQUIERDA-ABAJO----------------------- */}
-          <div
-            className={
-              theme === false
-                ? "hidden sm:flex w-[75px] h-[75px]  absolute left-[8.5%] bottom-[21.5%] trazo3 containerFloat1"
-                : "hidden sm:flex w-[75px] h-[75px]  absolute left-[8.5%] bottom-[21.5%] trazo2 containerFloat1"
-            }
-          ></div>
+          <div className="hidden sm:flex w-[75px] h-[75px] absolute left-[8.5%] bottom-[21.5%] trazo containerFloat1"></div>
           {/* FIGURA DE LA IZQUIERDA-ARRIBA----------------------- */}
-
-          <div
-            className={
-              theme === false
-                ? "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#0055ff] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
-                : "sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-[#f9b757] absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] rounded-tl-full containerFloat2"
-            }
-          ></div>
+          <div className="sm:w-[30px] sm:h-[30px] w-[5.8vw] h-[5.8vw] bg-white absolute sm:left-[10.5%] sm:top-[19.5%] left-[14vw] top-[43vw] containerFloat2 rounded-tl-full"></div>
           {/* FIGURA DE LA DERECHA-ABAJO----------------------- */}
-          <div
-            className={
-              theme === false
-                ? "hidden sm:flex w-[37px] h-[37px] bg-[#0055ff] absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3"
-                : "hidden sm:flex w-[37px] h-[37px] bg-[#6561bf] absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3"
-            }
-          >
+          <div className="hidden sm:flex w-[37px] h-[37px] bg-white absolute right-[10.5%] bottom-[20%] rounded-full containerFloat3">
             <div
               className={
                 theme === false
-                  ? "w-[75%] h-[75%] bg-[#ffffff] m-auto rounded-full"
-                  : "w-[75%] h-[75%] bg-[#000000] m-auto rounded-full"
+                  ? "w-[75%] h-[75%] bg-[#0055ff] m-auto rounded-full"
+                  : "w-[75%] h-[75%] bg-[#ff5100] m-auto rounded-full"
               }
             ></div>
           </div>
           {/* FIGURA DE LA DERECHA-ARRIBA----------------------- */}
           <div className="absolute sm:right-[9%] sm:top-[21%] right-[14vw] top-[43vw] rotateSquare containerFloat4">
-            <div className={theme === false ? "triangle1" : "triangle2"}></div>
+            <div className="triangle"></div>
           </div>
 
           {/* DIV DEL HEADER----------------------- */}
@@ -95,7 +76,7 @@ const Home = ({
             }}
             className={
               theme === false
-                ? "my-auto md:px-2 px-4 sm:pt-4 text-black"
+                ? "my-auto md:px-2 px-4 sm:pt-4 text-white"
                 : "my-auto md:px-2 px-4 sm:pt-4 text-white"
             }
           >
@@ -139,7 +120,7 @@ const Home = ({
             <div
               className={
                 theme === false
-                  ? "text-[#797979] lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center"
+                  ? "text-[#ffffff] lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center"
                   : "text-[#ffffff] lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center"
               }
             >
@@ -170,7 +151,7 @@ const Home = ({
             <div
               className={
                 theme === false
-                  ? "text-[#797979] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
+                  ? "text-[#ffffff] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
                   : "text-[#ffffff] px-2 lg:text-[20px] md:text-[17px] text-[17px] font-light mt-[15px] text-center sm:px-10"
               }
             >
@@ -197,8 +178,8 @@ const Home = ({
                 }}
                 className={
                   theme === false
-                    ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
-                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
+                    ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ffffff] text-[#000000] rounded-md flex buttonShadow cursor-pointer transitionButton"
+                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ffffff] text-[#000000] rounded-md flex buttonShadow cursor-pointer transitionButton"
                 }
               >
                 <div className="flex px-3">

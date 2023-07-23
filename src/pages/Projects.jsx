@@ -55,7 +55,7 @@ const ProjectCard = ({
         {/* DIV DEL LA IMAGEN----------------------- */}
         <div className="w-[100%] flex ">
           <div
-            className={`flex sm:h-[34vh] sm:w-full h-[75vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
+            className={`flex sm:h-[255px] sm:w-[400px] h-[50vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
           ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] text-[#797979]">
@@ -172,7 +172,7 @@ const ProjectCard2 = ({
         {/* DIV DEL LA IMAGEN----------------------- */}
         <div className="w-[100%] flex ">
           <div
-            className={`flex sm:h-[34vh] sm:w-full h-[75vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
+            className={`flex sm:h-[255px] sm:w-[400px] h-[50vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
           ></div>{" "}
         </div>
         <div className="sm:text-[19px] text-[18px] text-[#797979]">

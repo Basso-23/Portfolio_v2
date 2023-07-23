@@ -134,12 +134,12 @@ const Skills = ({
             <div className="sm:text-[19px] text-[18px] font-light ">
               {language ? (
                 <div className="pt-2">
-                  Willing to learn new tools and programming languages to
+                  Always willing to learn new tools and programming languages to
                   quickly adapt to any project and challenge that comes my way.
                 </div>
               ) : (
                 <div className="pt-2">
-                  Dispuesto a aprender nuevas herramientas y lenguajes de
+                  Siempre dispuesto a aprender nuevas herramientas y lenguajes de
                   programación para adaptarme rápidamente a cualquier proyecto y
                   desafío que se presente.
                 </div>
