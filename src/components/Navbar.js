@@ -29,6 +29,21 @@ const Navbar = ({
     }
   }, [theme]);
 
+  const changeBackground = () => {
+    if (theme === false) {
+      const style = document.documentElement.style;
+      style.setProperty("--background", "#111111");
+      style.setProperty("--btnColor", "#ff5100");
+      style.setProperty("--modalBackground", "#111111");
+    }
+    if (theme === true) {
+      const style = document.documentElement.style;
+      style.setProperty("--background", "#f9f9f9");
+      style.setProperty("--btnColor", "#0055ff");
+      style.setProperty("--modalBackground", "#ffffff");
+    }
+  };
+
   return (
     <div
       className={
@@ -81,6 +96,7 @@ const Navbar = ({
             onClick={() => {
               setTheme(!theme);
               setToggleTheme(!toggleTheme);
+              changeBackground();
             }}
             className={
               theme === false

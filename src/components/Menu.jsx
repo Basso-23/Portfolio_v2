@@ -53,7 +53,7 @@ const Menu = ({
     <div>
       <div
         className={
-          "xl:hidden absolute right-[7%] mt-[-2.1vh] z-10 pt-[53px] gap-28 text-[17.5px]"
+          "xl:hidden absolute right-[7%] mt-[-2.1vh] z-50 pt-[53px] gap-28 text-[17.5px]"
         }
       >
         <div className="w-full flex justify-end">

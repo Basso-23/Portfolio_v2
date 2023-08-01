@@ -15,8 +15,8 @@ const Languages = ({ name, theme }) => {
       <div
         className={
           theme === false
-            ? "bg-[#000000] text-[#ffffff] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[14px] inter"
-            : "bg-[#ffffff] text-[#111111] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[14px] inter"
+            ? "bg-[#000000] text-[#ffffff] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[min(3.5vw,14px)] inter"
+            : "bg-[#ffffff] text-[#111111] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[min(3.5vw,14px)] inter"
         }
       >
         {name}
@@ -43,7 +43,9 @@ const CardExperience = ({
 }) => {
   return (
     <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
-      <div className="font-bold ml-1 mb-4 text-[18px] space">{date}</div>
+      <div className="font-bold ml-1 mb-4 text-[min(4.5vw,18px)] space">
+        {date}
+      </div>
 
       <div className="flex">
         {theme ? (
@@ -55,8 +57,8 @@ const CardExperience = ({
         <div
           className={
             theme === false
-              ? "bg-[#bd171700] ml-10 text-black font-semibold text-[20px] mt-[-4px] mr-[15px]"
-              : "bg-[#bd171700] ml-10 text-white font-semibold text-[20px] mt-[-4px] mr-[15px]"
+              ? "bg-[#bd171700] ml-10 text-black font-semibold text-[min(4.5vw,20px)] mt-[-4px] mr-[15px]"
+              : "bg-[#bd171700] ml-10 text-white font-semibold text-[min(4.5vw,20px)] mt-[-4px] mr-[15px]"
           }
         >
           <div className="flex flex-wrap">
@@ -65,17 +67,17 @@ const CardExperience = ({
             </div>
           </div>
 
-          <div className="ml-[-51.5px] text-[#797979] font-normal">
-            <div className=" border-l-2 border-[#565656] sm:text-[16px] text-[15px]">
+          <div className="ml-[-51.5px] font-normal">
+            <div className=" border-l-2 border-[#565656] text-[min(4.5vw,16px)]">
               <div className="ml-[30px] pt-2 pb-12">
-                <div className="text-[17px] font-light">{description}</div>
+                <div className="text-[min(4.5vw,17px)] font-sans sm:mr-14 font-light">{description}</div>
                 <div className="flex flex-wrap gap-x-6 gap-y-4 mt-6">
                   <Languages name={language1} theme={theme} />
                   <Languages name={language2} theme={theme} />
                   <Languages name={language3} theme={theme} />
                 </div>
               </div>
-              <div className="ml-[30px] flex mt-[-15px] text-[17px]">
+              <div className="ml-[30px] flex mt-[-15px] text-[min(4.5vw,17px)]">
                 {language ? <div>Company:</div> : <div>Compañía:</div>}
                 <a
                   href={link}
@@ -100,10 +102,8 @@ const CardExperience = ({
 const About = ({
   setToggle,
   toggle,
-  active,
   setActive,
   theme,
-  setTheme,
   language,
   setLanguage,
 }) => {
@@ -164,11 +164,11 @@ const About = ({
               <div
                 className={
                   theme === false
-                    ? "m-auto faceBorder1 sm:h-[50vh] sm:w-[50vh] h-[89vw] w-[100vw] flex"
-                    : "m-auto faceBorder2 sm:h-[50vh] sm:w-[50vh] h-[89vw] w-[100vw] flex"
+                    ? "m-auto faceBorder1 sm:h-[500px] sm:w-[500px] h-[89vw] w-[100vw] flex"
+                    : "m-auto faceBorder2 sm:h-[500px] sm:w-[500px] h-[89vw] w-[100vw] flex"
                 }
               >
-                <div className="flex sm:h-[30vh] sm:w-[30vh] h-[60vw] w-[60vw] face containerFloat1 m-auto"></div>{" "}
+                <div className="flex sm:h-[300px] sm:w-[300px] h-[60vw] w-[60vw] face containerFloat1 m-auto"></div>{" "}
               </div>
             </div>
 
@@ -178,8 +178,8 @@ const About = ({
                 <div
                   className={
                     theme === false
-                      ? "font-semibold sm:text-[48px] text-[32px] text-black lg:pt-0 pt-6 space"
-                      : "font-semibold sm:text-[48px] text-[32px] text-white lg:pt-0 pt-6 space"
+                      ? "font-semibold text-[min(8vw,48px)] text-black lg:pt-0 pt-6 space"
+                      : "font-semibold text-[min(8vw,48px)] text-white lg:pt-0 pt-6 space"
                   }
                 >
                   {language ? (
@@ -189,7 +189,7 @@ const About = ({
                   )}
                 </div>
 
-                <div className="sm:text-[19px] text-[18px] font-light">
+                <div className="text-[min(4.5vw,19px)] font-light">
                   <div className="pt-2">
                     {language ? (
                       <div>
@@ -205,7 +205,7 @@ const About = ({
                       </div>
                     )}
                   </div>
-                  <div className="pt-4 sm:text-[19px] text-[18px] ">
+                  <div className="pt-4 text-[min(4.5vw,19px)]">
                     {language ? (
                       <div>
                         I feel more than comfortable learning from my teammates
@@ -231,11 +231,7 @@ const About = ({
                       setActive("skills");
                       toggle === false ? "" : setToggle(!toggle);
                     }}
-                    className={
-                      theme === false
-                        ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow transitionButton"
-                        : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton"
-                    }
+                    className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton"
                   >
                     {language ? (
                       <div className="pt-[1px]">Check My Skills</div>
@@ -270,8 +266,8 @@ const About = ({
                   <div
                     className={
                       theme === false
-                        ? "font-semibold sm:text-[48px] text-[32px] text-black space"
-                        : "font-semibold sm:text-[48px] text-[32px] text-white space"
+                        ? "font-semibold text-[min(8vw,48px)] text-black space"
+                        : "font-semibold text-[min(8vw,48px)] text-white space"
                     }
                   >
                     {language ? (
@@ -281,7 +277,7 @@ const About = ({
                     )}
                   </div>
 
-                  <div className="sm:text-[19px] text-[18px] font-light">
+                  <div className="text-[min(4.5vw,19px)] font-light">
                     <div className="pt-2">
                       {language ? (
                         <div>
@@ -304,11 +300,7 @@ const About = ({
                     <a
                       href={resume}
                       target="_blank"
-                      className={
-                        theme === false
-                          ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff]  text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
-                          : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
-                      }
+                      className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
                     >
                       {language ? (
                         <div className="pt-[1px]">Download Resume</div>

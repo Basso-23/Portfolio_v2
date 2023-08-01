@@ -14,8 +14,8 @@ const Languages = ({ name, theme, setTheme }) => {
       <div
         className={
           theme === false
-            ? "border-[2px] hover:border-[#000] text-[#000] hover:bg-black hover:text-white mt-0 py-2 px-8 rounded-full font-sans text-[14px] inter"
-            : "border-[2px] hover:border-[#fff] text-[#fff] hover:bg-white hover:text-black mt-0 py-2 px-8 rounded-full font-sans text-[14px] inter"
+            ? "border-[2px] hover:border-[#000] text-[#000] hover:bg-black hover:text-white mt-0 py-2 px-8 rounded-full font-sans text-[min(3.5vw,14px)] inter"
+            : "border-[2px] hover:border-[#fff] text-[#fff] hover:bg-white hover:text-black mt-0 py-2 px-8 rounded-full font-sans text-[min(3.5vw,14px)] inter"
         }
       >
         {name}
@@ -40,7 +40,7 @@ const CardSkills = ({
       className={
         theme === false
           ? "bg-[#ffffff] mx-auto lg:w-[90%] w-[100%] flex rounded-lg mt-10 divShadow"
-          : "bg-[#070707] mx-auto lg:w-[90%] w-[100%] flex rounded-lg mt-10"
+          : "bg-[#070707] mx-auto lg:w-[90%] w-[100%] flex rounded-lg mt-10 border-[1px] border-[#212121]"
       }
     >
       <div className="flex">
@@ -56,8 +56,8 @@ const CardSkills = ({
           <div
             className={
               theme === false
-                ? "text-[#000] border-b-2 border-[#797979] pb-2 font-bold text-[21px] space"
-                : "text-[#fff] border-b-2 border-[#797979] pb-2 font-bold text-[21px] space"
+                ? "text-[#000] border-b-2 border-[#797979] pb-2 font-bold text-[min(5vw,21px)] space"
+                : "text-[#fff] border-b-2 border-[#797979] pb-2 font-bold text-[min(5vw,21px)] space"
             }
           >
             {name}
@@ -65,8 +65,8 @@ const CardSkills = ({
           <div
             className={
               theme === false
-                ? "text-[16.5px] pt-4 space font-light text-[#000]"
-                : "text-[16.5px] pt-4 space font-light text-[#fff]"
+                ? "text-[min(4.5vw,16.5px)] pt-4 space text-[#000] font-light"
+                : "text-[min(4.5vw,16.5px)] pt-4 space text-[#fff] font-light"
             }
           >
             {description}
@@ -116,8 +116,8 @@ const Skills = ({
             <div
               className={
                 theme === false
-                  ? "font-semibold sm:text-[40px] text-[32px] text-black"
-                  : "font-semibold sm:text-[40px] text-[32px] text-white"
+                  ? "font-semibold text-[min(8vw,48px)] text-black"
+                  : "font-semibold text-[min(8vw,48px)] text-white"
               }
             >
               {language ? (
@@ -131,7 +131,7 @@ const Skills = ({
               )}
             </div>
 
-            <div className="sm:text-[19px] text-[18px] font-light ">
+            <div className="text-[min(4.5vw,19px)] font-light pr-14">
               {language ? (
                 <div className="pt-2">
                   Always willing to learn new tools and programming languages to
@@ -139,9 +139,9 @@ const Skills = ({
                 </div>
               ) : (
                 <div className="pt-2">
-                  Siempre dispuesto a aprender nuevas herramientas y lenguajes de
-                  programación para adaptarme rápidamente a cualquier proyecto y
-                  desafío que se presente.
+                  Siempre dispuesto a aprender nuevas herramientas y lenguajes
+                  de programación para adaptarme rápidamente a cualquier
+                  proyecto y desafío que se presente.
                 </div>
               )}
             </div>
@@ -154,11 +154,7 @@ const Skills = ({
                   setActive("projects");
                   toggle === false ? "" : setToggle(!toggle);
                 }}
-                className={
-                  theme === false
-                    ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow transitionButton"
-                    : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow transitionButton"
-                }
+                className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton"
               >
                 {language ? (
                   <div className="pt-[1px]">See My Projects</div>
@@ -176,8 +172,8 @@ const Skills = ({
             <div
               className={
                 theme === false
-                  ? "font-semibold sm:text-[40px] text-[32px] text-black text-center"
-                  : "font-semibold sm:text-[40px] text-[32px] text-white text-center"
+                  ? "font-semibold text-[min(8vw,48px)] text-black sm:text-start text-center"
+                  : "font-semibold text-[min(8vw,48px)] text-white sm:text-start text-center"
               }
             >
               {language ? (
@@ -187,8 +183,8 @@ const Skills = ({
               )}
             </div>
 
-            <div className="sm:text-[19px] text-[17px]">
-              <div className="flex flex-wrap gap-x-6 gap-y-4 mt-10 justify-center">
+            <div className="text-[min(4.5vw,19px)]">
+              <div className="flex flex-wrap gap-x-6 gap-y-4 mt-8 sm:justify-start justify-center">
                 <Languages theme={theme} name="HTML 5" />
                 <Languages theme={theme} name="CSS" />
                 <Languages theme={theme} name="JavaScript" />

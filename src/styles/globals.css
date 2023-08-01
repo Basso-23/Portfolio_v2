@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --btnColor: #0055ff;
+  --background: #f9f9f9;
+  --modalBackground: #ffffff;
+  background-color: var(--background);
+}
+
+.bgColor {
+  background-color: var(--background);
+}
+
+.btnColor {
+  background-color: var(--btnColor);
+}
+
 @font-face {
   font-family: space;
   src: url(../../public/SpaceGrotesk-VariableFont_wght.ttf);
@@ -676,7 +691,7 @@
 }
 
 .filterButtons1 {
-  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons1:hover {
@@ -687,11 +702,11 @@
 .filterActive1 {
   color: white;
   background-color: #ff5100;
-  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons2 {
-  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .filterButtons2:hover {
@@ -702,7 +717,7 @@
 .filterActive2 {
   color: white;
   background-color: #0055ff;
-  @apply md:w-[19vh] w-[80vw] justify-center my-auto font-bold text-[14.5px] pl-[4vh] pr-[2.5vh] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
 }
 
 .activeColor1 {
@@ -799,4 +814,123 @@
 
 .toggleSwitch:hover {
   background-color: rgb(61, 61, 61);
+}
+
+.glowOnline {
+  animation-name: glowOnline;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes glowOnline {
+  from {
+    box-shadow: 0px 0px 0px #1ef758, 0px 0px 0px #1ef758;
+  }
+  to {
+    box-shadow: 0px 0px 10px #1ef758, 0px 0px 20px #1ef758;
+  }
+}
+
+.react-responsive-modal-root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.react-responsive-modal-container {
+  height: 100%;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.react-responsive-modal-containerCenter:after {
+  width: 0;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-responsive-modal-modal {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  background: var(--modalBackground);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: 0rem;
+  padding: 0rem;
+  position: relative;
+  overflow-y: auto;
+  @apply md:rounded-md md:min-h-fit min-h-full xl:max-w-[1190px] md:max-w-[550px] max-w-full;
+}
+
+.react-responsive-modal-closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+}
+
+@-webkit-keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: translateY(250px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: translateY(250px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

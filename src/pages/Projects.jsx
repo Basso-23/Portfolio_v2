@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { projects } from "../components/IndexENG";
 import { projects2 } from "../components/IndexESP";
-import { MdOutlineTurnSlightLeft } from "react-icons/md";
-import { AiOutlinePushpin } from "react-icons/ai";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import { motion as m } from "framer-motion";
+import ModalScreen from "@/components/Modal";
 
 const ProjectCard = ({
+  colorStatus,
+  status,
+  info,
+  modalKey,
   name,
   title,
   description,
@@ -19,7 +23,16 @@ const ProjectCard = ({
   float,
   linkP,
   linkG,
+  modal,
+  setModal,
+  setItemsModal,
 }) => {
+  const filterItemModal = (keyItems) => {
+    const updatedItems = info.filter((item) => {
+      return item.modalKey === keyItems;
+    });
+    setItemsModal(updatedItems);
+  };
   return (
     <m.div
       initial={{ y: "35%", opacity: 0 }}
@@ -32,92 +45,52 @@ const ProjectCard = ({
       }}
       className={
         theme === false
-          ? "lg:w-[50vh] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
-          : "lg:w-[50vh] w-[100%] bg-[#070707] mt-14 rounded-xl"
+          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
+          : "sm:w-[500px] w-[100%] bg-[#070707] mt-14 rounded-xl border-[1px] border-[#212121]"
       }
     >
       {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="lg:py-8 lg:px-[60px] p-8 md:mx-auto w-[100%]">
+      <div className="sm:p-8 sm:pb-0 p-5 pt-4 pb-0 md:mx-auto w-[100%]">
         <div
-          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-0 flex`}
+          className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
         >
-          <div className="flex rounded-3xl">{name}</div>
+          <div className="flex rounded-3xl w-full">{name}</div>
+          {/* STATUS----------------------- */}
+          <div className="w-full flex justify-end">
+            <div
+              className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
+            ></div>
+            <div
+              className={
+                theme === false
+                  ? " text-black font-light text-[min(3.8vw,18px)] flex "
+                  : " text-white font-light text-[min(3.8vw,18px)] flex "
+              }
+            >
+              <div className="my-auto">{status}</div>
+            </div>
+          </div>
         </div>
-        <div
-          className={
-            theme === false
-              ? "font-semibold sm:text-[38px] text-[28px] mt-4 mb-[-15px] text-black"
-              : "font-semibold sm:text-[38px] text-[28px] mt-4 mb-[-15px] text-white"
-          }
-        >
-          {title}
+        <div className="flex">
+          <div
+            className={
+              theme === false
+                ? "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-black w-full"
+                : "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-white w-full"
+            }
+          >
+            {title}
+          </div>
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%] flex ">
+        <div className="w-[100%]">
           <div
-            className={`flex sm:h-[255px] sm:w-[400px] h-[50vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
+            onClick={() => {
+              setModal(!modal);
+              filterItemModal(modalKey);
+            }}
+            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-10 mt-8 mb-4`}
           ></div>{" "}
-        </div>
-        <div className="sm:text-[19px] text-[18px] text-[#797979]">
-          <div
-            className={
-              theme === false ? "font-light " : "font-light  text-white"
-            }
-          >
-            {description}
-          </div>
-        </div>
-
-        {/* DIV DEL BOTON See Projects----------------------- */}
-        <div className="w-full md:flex text-white md:pt-12 pt-4">
-          <div
-            className={
-              theme === false
-                ? "py-4 md:border-l-2 border-black text-black italic font-medium pt-6 flex md:hidden sm:pt-3"
-                : "py-4 md:border-l-2 border-white italic font-medium pt-6 flex md:hidden sm:pt-3"
-            }
-          >
-            {language ? (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Source Code
-              </a>
-            ) : (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Código fuente
-              </a>
-            )}
-          </div>
-          <a
-            href={linkP}
-            target="_blank"
-            className={`${colorBg} justify-center text-[15px] pl-7 pr-5 py-[14px] rounded-md flex buttonShadow cursor-pointer transitionButton`}
-          >
-            {language ? (
-              <div className="pt-[1px] ">See Project</div>
-            ) : (
-              <div className="pt-[1px] ">Ver Proyecto</div>
-            )}
-            <div className="rotateIcon ml-1 mt-[0.5px]">
-              <MdOutlineTurnSlightLeft size={"25px"} />
-            </div>
-          </a>
-          <div
-            className={
-              theme === false
-                ? "md:flex hidden py-4 sm:ml-4 sm:pl-4 sm:border-l-2 border-black text-black italic font-medium pt-6 pl-2 sm:pt-3"
-                : "md:flex hidden py-4 sm:ml-4 sm:pl-4 sm:border-l-2 border-white italic font-medium pt-6 pl-2 sm:pt-3"
-            }
-          >
-            {language ? (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Source Code
-              </a>
-            ) : (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Código fuente
-              </a>
-            )}
-          </div>
         </div>
       </div>
     </m.div>
@@ -125,6 +98,10 @@ const ProjectCard = ({
 };
 
 const ProjectCard2 = ({
+  colorStatus,
+  status,
+  info,
+  modalKey,
   name,
   title,
   description,
@@ -136,7 +113,16 @@ const ProjectCard2 = ({
   float,
   linkP,
   linkG,
+  modal,
+  setModal,
+  setItemsModal,
 }) => {
+  const filterItemModal = (keyItems) => {
+    const updatedItems = info.filter((item) => {
+      return item.modalKey === keyItems;
+    });
+    setItemsModal(updatedItems);
+  };
   return (
     <m.div
       initial={{ y: "35%", opacity: 0 }}
@@ -149,92 +135,52 @@ const ProjectCard2 = ({
       }}
       className={
         theme === false
-          ? "lg:w-[50vh] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
-          : "lg:w-[50vh] w-[100%] bg-[#070707] mt-14 rounded-xl"
+          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
+          : "sm:w-[500px] w-[100%] bg-[#070707] mt-14 rounded-xl border-[1px] border-[#212121]"
       }
     >
       {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="lg:py-8 lg:px-[60px] p-8 md:mx-auto w-[100%]">
+      <div className="sm:p-8 sm:pb-0 p-5 pt-4 pb-0 md:mx-auto w-[100%]">
         <div
-          className={`${colorTxt} font-semibold sm:text-[20px] text-[18px] lg:mt-0 flex`}
+          className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
         >
-          <div className="flex rounded-3xl">{name}</div>
+          <div className="flex rounded-3xl w-full">{name}</div>
+          {/* STATUS----------------------- */}
+          <div className="w-full flex justify-end">
+            <div
+              className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
+            ></div>
+            <div
+              className={
+                theme === false
+                  ? " text-black font-light text-[min(3.8vw,18px)] flex "
+                  : " text-white font-light text-[min(3.8vw,18px)] flex "
+              }
+            >
+              <div className="my-auto">{status}</div>
+            </div>
+          </div>
         </div>
-        <div
-          className={
-            theme === false
-              ? "font-semibold sm:text-[38px] text-[28px] mt-4 mb-[-15px] text-black"
-              : "font-semibold sm:text-[38px] text-[28px] mt-4 mb-[-15px] text-white"
-          }
-        >
-          {title}
+        <div className="flex">
+          <div
+            className={
+              theme === false
+                ? "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-black w-full"
+                : "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-white w-full"
+            }
+          >
+            {title}
+          </div>
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%] flex ">
+        <div className="w-[100%] ">
           <div
-            className={`flex sm:h-[255px] sm:w-[400px] h-[50vw] w-[70vw] ${image} ${float}  m-auto rounded-md sm:my-10 my-8`}
+            onClick={() => {
+              setModal(!modal);
+              filterItemModal(modalKey);
+            }}
+            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-10 mt-8 mb-4`}
           ></div>{" "}
-        </div>
-        <div className="sm:text-[19px] text-[18px] text-[#797979]">
-          <div
-            className={
-              theme === false ? "font-light " : "font-light  text-white"
-            }
-          >
-            {description}
-          </div>
-        </div>
-
-        {/* DIV DEL BOTON See Projects----------------------- */}
-        <div className="w-full md:flex text-white md:pt-12 pt-4">
-          <div
-            className={
-              theme === false
-                ? "py-4 md:border-l-2 border-black text-black italic font-medium pt-6 flex md:hidden sm:pt-3"
-                : "py-4 md:border-l-2 border-white italic font-medium pt-6 flex md:hidden sm:pt-3"
-            }
-          >
-            {language ? (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Source Code
-              </a>
-            ) : (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Código fuente
-              </a>
-            )}
-          </div>
-          <a
-            href={linkP}
-            target="_blank"
-            className={`${colorBg} justify-center text-[15px] pl-7 pr-5 py-[14px] rounded-md flex buttonShadow cursor-pointer transitionButton`}
-          >
-            {language ? (
-              <div className="pt-[1px] ">See Project</div>
-            ) : (
-              <div className="pt-[1px] ">Ver Proyecto</div>
-            )}
-            <div className="rotateIcon ml-1 mt-[0.5px]">
-              <MdOutlineTurnSlightLeft size={"25px"} />
-            </div>
-          </a>
-          <div
-            className={
-              theme === false
-                ? "md:flex hidden py-4 sm:ml-4 sm:pl-4 sm:border-l-2 border-black text-black italic font-medium pt-6 pl-2 sm:pt-3"
-                : "md:flex hidden py-4 sm:ml-4 sm:pl-4 sm:border-l-2 border-white italic font-medium pt-6 pl-2 sm:pt-3"
-            }
-          >
-            {language ? (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Source Code
-              </a>
-            ) : (
-              <a href={linkG} target="_blank" className="cursor-pointer">
-                Código fuente
-              </a>
-            )}
-          </div>
         </div>
       </div>
     </m.div>
@@ -245,9 +191,6 @@ const FilterButtons = ({ label, icon }) => {
   return (
     <>
       <div className="pt-[1px] text-[14.5px]">{label}</div>
-      <div className=" ml-2 mt-[1px]">
-        <AiOutlinePushpin size={"20px"} />
-      </div>
     </>
   );
 };
@@ -261,6 +204,8 @@ const Projects = ({
   setTheme,
   language,
   setLanguage,
+  itemsModal,
+  setItemsModal,
 }) => {
   const [filterActive, setFilterActive] = useState("");
   const [filterButtons, setFilterButtons] = useState("");
@@ -279,6 +224,7 @@ const Projects = ({
 
   const [info, setInfo] = useState(projects);
   const [items, setItems] = useState(projects);
+  const [modal, setModal] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
 
   useEffect(() => {
@@ -302,6 +248,7 @@ const Projects = ({
     });
     setItems(updatedItems);
   };
+
   return (
     <div>
       <Head>
@@ -311,6 +258,26 @@ const Projects = ({
           <title>CarlosBaso/Proyectos</title>
         )}
       </Head>
+
+      {modal ? (
+        <div className="flex z-50">
+          <div className="flex">
+            {itemsModal.map((item) => (
+              <ModalScreen
+                key={item.key}
+                {...item}
+                theme={theme}
+                language={language}
+                modal={modal}
+                setModal={setModal}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
+
       <div
         className={
           theme === false
@@ -318,7 +285,7 @@ const Projects = ({
             : "w-full bg-[#111111] pb-20"
         }
       >
-        <div className="w-[85%] mx-auto flex flex-col space">
+        <div className="w-[100%] mx-auto flex flex-col space">
           {/* DIV DEL HEADER----------------------- */}
           <m.div
             initial={{ y: "35%", opacity: 0 }}
@@ -334,14 +301,14 @@ const Projects = ({
             <div
               className={
                 theme === false
-                  ? "font-semibold sm:text-[49px] text-[32px] text-black justify-center flex text-center"
-                  : "font-semibold sm:text-[49px] text-[32px] text-white justify-center flex text-center"
+                  ? "font-semibold text-[min(8vw,48px)] text-black justify-center flex text-center"
+                  : "font-semibold text-[min(8vw,48px)] text-white justify-center flex text-center"
               }
             >
               {language ? (
                 <div>Check out some of my latest projects.</div>
               ) : (
-                <div>Echa un vistazo a algunos de mis últimos proyectos.</div>
+                <div>Mira algunos de mis últimos proyectos.</div>
               )}
             </div>
 
@@ -414,24 +381,32 @@ const Projects = ({
 
           {/* CARTAS DE LOS PROYECTOS----------------------- */}
           {actualizar ? (
-            <div className=" w-full flex flex-wrap gap-x-16 justify-center">
+            <div className=" w-full flex flex-wrap gap-x-16 justify-center px-4">
               {items.map((item) => (
                 <ProjectCard
                   key={item.key}
                   {...item}
                   theme={theme}
                   language={language}
+                  modal={modal}
+                  setModal={setModal}
+                  setItemsModal={setItemsModal}
+                  info={info}
                 />
               ))}
             </div>
           ) : (
-            <div className=" w-full flex flex-wrap gap-x-16 justify-center">
+            <div className=" w-full flex flex-wrap gap-x-16 justify-center px-4">
               {items.map((item) => (
                 <ProjectCard2
                   key={item.key}
                   {...item}
                   theme={theme}
                   language={language}
+                  modal={modal}
+                  setModal={setModal}
+                  setItemsModal={setItemsModal}
+                  info={info}
                 />
               ))}
             </div>
