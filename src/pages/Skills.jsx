@@ -131,7 +131,7 @@ const Skills = ({
               )}
             </div>
 
-            <div className="text-[min(4.5vw,19px)] font-light pr-14">
+            <div className="text-[min(4.5vw,19px)] font-light sm:pr-14">
               {language ? (
                 <div className="pt-2">
                   Always willing to learn new tools and programming languages to

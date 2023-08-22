@@ -55,21 +55,6 @@ const ProjectCard = ({
           className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
         >
           <div className="flex rounded-3xl w-full">{name}</div>
-          {/* STATUS----------------------- */}
-          <div className="w-full flex justify-end">
-            <div
-              className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
-            ></div>
-            <div
-              className={
-                theme === false
-                  ? " text-black font-light text-[min(3.8vw,18px)] flex "
-                  : " text-white font-light text-[min(3.8vw,18px)] flex "
-              }
-            >
-              <div className="my-auto">{status}</div>
-            </div>
-          </div>
         </div>
         <div className="flex">
           <div
@@ -89,7 +74,7 @@ const ProjectCard = ({
               setModal(!modal);
               filterItemModal(modalKey);
             }}
-            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-10 mt-8 mb-4`}
+            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-8 mt-8 mb-4`}
           ></div>{" "}
         </div>
       </div>
@@ -145,21 +130,6 @@ const ProjectCard2 = ({
           className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
         >
           <div className="flex rounded-3xl w-full">{name}</div>
-          {/* STATUS----------------------- */}
-          <div className="w-full flex justify-end">
-            <div
-              className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
-            ></div>
-            <div
-              className={
-                theme === false
-                  ? " text-black font-light text-[min(3.8vw,18px)] flex "
-                  : " text-white font-light text-[min(3.8vw,18px)] flex "
-              }
-            >
-              <div className="my-auto">{status}</div>
-            </div>
-          </div>
         </div>
         <div className="flex">
           <div
@@ -179,7 +149,7 @@ const ProjectCard2 = ({
               setModal(!modal);
               filterItemModal(modalKey);
             }}
-            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-10 mt-8 mb-4`}
+            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-8 mt-8 mb-4`}
           ></div>{" "}
         </div>
       </div>

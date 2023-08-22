@@ -934,3 +934,18 @@
     opacity: 1;
   }
 }
+
+.gleam {
+  background-image: url(../assets/gleam.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gleamTxt {
+  color: #F6B10C;
+}
+
+.gleamBg {
+  background-color: #F6B10C;
+}

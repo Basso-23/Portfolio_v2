@@ -64,8 +64,8 @@ const ModalScreen = ({
           <div
             className={
               theme === false
-                ? "bg-white w-[100%] m-auto rounded-xl md:px-10 px-6 md:py-6 py-4 text-black"
-                : "bg-[#111111] w-[100%] m-auto rounded-xl md:px-10 px-6 md:py-6 py-4 text-white"
+                ? "bg-white w-[100%] m-auto rounded-xl md:px-10 px-4 md:py-6 py-4 text-black"
+                : "bg-[#111111] w-[100%] m-auto rounded-xl md:px-10 px-4 md:py-6 py-4 text-white"
             }
           >
             {/* HEADER--------------------------------------------------------------- */}
@@ -93,7 +93,7 @@ const ModalScreen = ({
                 </div>
                 <div className="flex justify-between">
                   <div className="flex">
-                    <AiOutlineGithub size={"40px"}/>
+                    <AiOutlineGithub size={"40px"} />
                     <div className="my-auto ml-2 italic w-full flex text-[min(4vw,16px)]">
                       {language ? (
                         <a
@@ -127,7 +127,9 @@ const ModalScreen = ({
                             : " text-white flex "
                         }
                       >
-                        <div className="my-auto font-light text-[min(4vw,16px)]">{status}</div>
+                        <div className="my-auto font-light text-[min(4vw,16px)] space">
+                          {status}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -187,7 +189,7 @@ const ModalScreen = ({
 
                 <div className="mt-6 font-bold">
                   {language ? <div>Created with</div> : <div>Creado con</div>}
-                  <div className="flex flex-wrap space-x-3">
+                  <div className="flex flex-wrap space-x-2">
                     {creation.map((item) => (
                       <Languages key={item.key} {...item} theme={theme} />
                     ))}
