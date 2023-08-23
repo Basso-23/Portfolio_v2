@@ -60,7 +60,7 @@ const Navbar = ({
         }
       >
         {/* DIV DEL TITULO----------------------- */}
-        <div className="my-auto text-[24px] font-bold absolute flex">
+        <div className="my-auto text-[min(6.5vw,24px)] font-bold absolute flex">
           <Link
             href={"/"}
             onClick={() => {
@@ -69,7 +69,7 @@ const Navbar = ({
             className="flex"
           >
             {language ? (
-              <div className=" tracking-wide flex">
+              <div className=" tracking-wide flex my-auto">
                 <div> Port </div>
                 <div
                   className={
@@ -80,7 +80,7 @@ const Navbar = ({
                 </div>
               </div>
             ) : (
-              <div className=" tracking-wide flex">
+              <div className=" tracking-wide flex my-auto">
                 <div> Porta </div>
                 <div
                   className={
@@ -100,8 +100,8 @@ const Navbar = ({
             }}
             className={
               theme === false
-                ? "cursor-pointer hover:scale-110 transition-all ml-4 mt-[-5px] toggleSwitch1 w-[45px] h-[45px] z-20"
-                : "cursor-pointer hover:scale-110 transition-all ml-4 mt-[-5px] toggleSwitch2 w-[45px] h-[45px] z-20"
+                ? "cursor-pointer hover:scale-110 transition-all ml-4 my-auto toggleSwitch1 w-[min(11.5vw,45px)] h-[min(11.5vw,45px)] z-20"
+                : "cursor-pointer hover:scale-110 transition-all ml-4 my-auto toggleSwitch2 w-[min(11.5vw,45px)] h-[min(11.5vw,45px)] z-20"
             }
           >
             <div
@@ -197,8 +197,8 @@ const Navbar = ({
           }}
           className={
             theme === false
-              ? "xl:flex text-[14.5px] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-md cursor-pointer transition-all font-bold hover:bg-[#0055ff] hover:text-white"
-              : "xl:flex text-[14.5px] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-md cursor-pointer transition-all font-bold hover:bg-[#ff5100] hover:text-white"
+              ? "xl:flex text-[min(4vw,14.5px)] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-sm cursor-pointer transition-all font-bold hover:bg-[#0055ff] hover:text-white"
+              : "xl:flex text-[min(4vw,14.5px)] buttonShadow hidden absolute right-[7%] mt-[-5px] py-3 px-6 text-black bg-white rounded-sm cursor-pointer transition-all font-bold hover:bg-[#ff5100] hover:text-white"
           }
         >
           {language ? <div>Contact Me</div> : <div>Contáctame</div>}

@@ -53,7 +53,7 @@ const Menu = ({
     <div>
       <div
         className={
-          "xl:hidden absolute right-[7%] mt-[-2.1vh] z-50 pt-[53px] gap-28 text-[17.5px]"
+          "xl:hidden absolute right-[7%] mt-[40px] z-50 gap-28 text-[17.5px]"
         }
       >
         <div className="w-full flex justify-end">
@@ -236,8 +236,8 @@ const Menu = ({
                 }}
                 className={
                   theme === false
-                    ? "flex w-full justify-center border-t-2 gap-4"
-                    : "flex w-full justify-center border-t-2 gap-4 border-[#707070]"
+                    ? "flex w-full justify-center border-t-[1.5px] gap-4"
+                    : "flex w-full justify-center border-t-[1.5px] gap-4 border-[#707070]"
                 }
               >
                 <div
@@ -245,14 +245,14 @@ const Menu = ({
                     setLanguage(true);
                     setToggle(!toggle);
                   }}
-                  className=" w-[35px] h-[23px] click transition-all cursor-pointer eng rounded-sm mt-4"
+                  className=" w-[35px] h-[23px] transition-all cursor-pointer eng rounded-sm mt-4"
                 ></div>
                 <div
                   onClick={() => {
                     setLanguage(false);
                     setToggle(!toggle);
                   }}
-                  className="ml-3 w-[36px] h-[24px] click transition-all cursor-pointer esp  rounded-sm mt-4"
+                  className="ml-3 w-[36px] h-[24px] transition-all cursor-pointer esp rounded-sm mt-4"
                 ></div>
               </m.div>
             </div>

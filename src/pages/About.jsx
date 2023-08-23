@@ -15,8 +15,8 @@ const Languages = ({ name, theme }) => {
       <div
         className={
           theme === false
-            ? "bg-[#000000] text-[#ffffff] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[min(3.5vw,14px)] inter"
-            : "bg-[#ffffff] text-[#111111] mt-0 py-2 px-8 rounded-full font-semibold font-sans text-[min(3.5vw,14px)] inter"
+            ? "bg-[#000000] text-[#ffffff] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
+            : "bg-[#ffffff] text-[#111111] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
         }
       >
         {name}
@@ -43,15 +43,21 @@ const CardExperience = ({
 }) => {
   return (
     <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
-      <div className="font-bold ml-1 mb-4 text-[min(4.5vw,18px)] space">
+      <div
+        className={
+          theme
+            ? "font-bold ml-5 mb-4 text-[min(4.5vw,17px)] space text-[#06ff93]"
+            : "font-bold ml-5 mb-4 text-[min(4.5vw,17px)] space text-[#ff007b]"
+        }
+      >
         {date}
       </div>
 
       <div className="flex">
         {theme ? (
-          <div className="bg-[#06ff93] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>
+          <div className="bg-[#06ff93] w-[min(4.5vw,15px)] h-[min(4.5vw,15px)] rounded-full absolute ml-[-18px]"></div>
         ) : (
-          <div className="bg-[#ff007b] w-[20px] h-[20px] rounded-full absolute ml-[-20px]"></div>
+          <div className="bg-[#ff007b] w-[min(4.5vw,15px)] h-[min(4.5vw,15px)] rounded-full absolute ml-[-18px]"></div>
         )}
 
         <div
@@ -70,14 +76,16 @@ const CardExperience = ({
           <div className="ml-[-51.5px] font-normal">
             <div className=" border-l-2 border-[#565656] text-[min(4.5vw,16px)]">
               <div className="ml-[30px] pt-2 pb-12">
-                <div className="text-[min(4.5vw,17px)] font-sans sm:mr-14 font-light">{description}</div>
+                <div className="text-[min(4.5vw,17px)] sm:mr-14 font-light">
+                  {description}
+                </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-4 mt-6">
                   <Languages name={language1} theme={theme} />
                   <Languages name={language2} theme={theme} />
                   <Languages name={language3} theme={theme} />
                 </div>
               </div>
-              <div className="ml-[30px] flex mt-[-15px] text-[min(4.5vw,17px)]">
+              <div className="ml-[30px] flex mt-[-15px] text-[min(4.5vw,17px)] font-light">
                 {language ? <div>Company:</div> : <div>Compañía:</div>}
                 <a
                   href={link}
@@ -132,13 +140,6 @@ const About = ({
 
   return (
     <div>
-      <Head>
-        {language ? (
-          <title>CarlosBaso/About</title>
-        ) : (
-          <title>CarlosBaso/Sobre mí</title>
-        )}
-      </Head>
       <div
         className={
           theme === false
@@ -149,15 +150,19 @@ const About = ({
         <div className="w-[86%] flex mx-auto pt-0 flex-col space">
           {/* DIV DE LA MITAD DE ARRIBA----------------------- */}
           <m.div
-            initial={{ y: "35%", opacity: 0 }}
+            initial={{ y: "10%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.8,
               ease: "easeOut",
               type: "spring",
               delay: 0,
             }}
-            className="grid lg:grid-cols-2 grid-cols-1 text-[#797979]"
+            className={
+              theme === false
+                ? "grid lg:grid-cols-2 grid-cols-1 text-[#000000]"
+                : "grid lg:grid-cols-2 grid-cols-1 text-[#ffffff]"
+            }
           >
             {/* DIV DE LA IZQUIERDA ARRIBA----------------------- */}
             <div className="w-[100%] flex py-10 pr-0">
@@ -194,18 +199,16 @@ const About = ({
                     {language ? (
                       <div>
                         Hello! I&apos;m Carlos Baso, a multidisciplinary
-                        software engineer based in Panama City. I&apos;m very
-                        passionate about the work that I do.
+                        software engineer based in Panama City.
                       </div>
                     ) : (
                       <div>
                         ¡Hola! Soy Carlos Baso, un ingeniero de software
-                        multidisciplinario viviendo en la ciudad de Panamá. Me
-                        apasiona mucho el trabajo que hago.
+                        multidisciplinario viviendo en la ciudad de Panamá.
                       </div>
                     )}
                   </div>
-                  <div className="pt-4 text-[min(4.5vw,19px)]">
+                  <div className="pt-4 text-[min(4.5vw,19px)] ">
                     {language ? (
                       <div>
                         I feel more than comfortable learning from my teammates
@@ -231,15 +234,15 @@ const About = ({
                       setActive("skills");
                       toggle === false ? "" : setToggle(!toggle);
                     }}
-                    className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton"
+                    className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] btnColor text-white rounded-sm flex buttonShadow transitionButton"
                   >
                     {language ? (
                       <div className="pt-[1px]">Check My Skills</div>
                     ) : (
                       <div className="pt-[1px]">Mis Habilidades</div>
                     )}
-                    <div className="rotateIcon ml-1 mt-[0.5px]">
-                      <MdOutlineTurnSlightLeft size={"25px"} />
+                    <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
+                      <MdOutlineTurnSlightLeft />
                     </div>
                   </Link>
                 </div>
@@ -249,15 +252,19 @@ const About = ({
 
           {/* DIV DE LA MITAD DE ABAJO----------------------- */}
           <m.div
-            initial={{ y: "19%", opacity: 0 }}
+            initial={{ y: "10%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.8,
               ease: "easeOut",
               type: "spring",
-              delay: 0.2,
+              delay: 0.1,
             }}
-            className="grid lg:grid-cols-2 grid-cols-1 pt-20 pb-16 text-[#797979]"
+            className={
+              theme === false
+                ? "grid lg:grid-cols-2 grid-cols-1 pt-20 pb-16 text-[#000000]"
+                : "grid lg:grid-cols-2 grid-cols-1 pt-20 pb-16 text-[#ffffff]"
+            }
           >
             {/* DIV DE ABAJO A LA IZQUIERDA----------------------- */}
             <div className="w-[100%]">
@@ -278,12 +285,12 @@ const About = ({
                   </div>
 
                   <div className="text-[min(4.5vw,19px)] font-light">
-                    <div className="pt-2">
+                    <div className="pt-2 ">
                       {language ? (
                         <div>
-                          I like the pleasure to work with companies across a
-                          variety of industries. I&apos;m always interested in
-                          new and exciting adventures.
+                          I would like to have the pleasure of working with
+                          companies within different sectors. I&apos;m always
+                          interested in new and exciting adventures.
                         </div>
                       ) : (
                         <div>
@@ -300,15 +307,15 @@ const About = ({
                     <a
                       href={resume}
                       target="_blank"
-                      className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton cursor-pointer"
+                      className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] btnColor text-white rounded-sm flex buttonShadow transitionButton cursor-pointer"
                     >
                       {language ? (
                         <div className="pt-[1px]">Download Resume</div>
                       ) : (
                         <div className="pt-[1px]">Descargar Currículum</div>
                       )}
-                      <div className="rotateIcon ml-1 mt-[0.5px]">
-                        <MdOutlineTurnSlightLeft size={"25px"} />
+                      <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
+                        <MdOutlineTurnSlightLeft />
                       </div>
                     </a>
                   </div>

@@ -8,21 +8,12 @@ import { motion as m } from "framer-motion";
 import ModalScreen from "@/components/Modal";
 
 const ProjectCard = ({
-  colorStatus,
-  status,
   info,
   modalKey,
-  name,
   title,
-  description,
-  colorTxt,
-  colorBg,
   theme,
-  language,
   image,
   float,
-  linkP,
-  linkG,
   modal,
   setModal,
   setItemsModal,
@@ -35,69 +26,55 @@ const ProjectCard = ({
   };
   return (
     <m.div
-      initial={{ y: "35%", opacity: 0 }}
+      initial={{ y: "20%", opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       transition={{
-        duration: 1,
+        duration: 0.8,
         ease: "easeOut",
         type: "spring",
         delay: 0.1,
       }}
       className={
         theme === false
-          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
-          : "sm:w-[500px] w-[100%] bg-[#070707] mt-14 rounded-xl border-[1px] border-[#212121]"
+          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-8 rounded-sm divShadow"
+          : "sm:w-[500px] w-[100%] bg-[#070707] mt-8 rounded-sm border-[1px] border-[#212121]"
       }
     >
       {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="sm:p-8 sm:pb-0 p-5 pt-4 pb-0 md:mx-auto w-[100%]">
-        <div
-          className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
-        >
-          <div className="flex rounded-3xl w-full">{name}</div>
-        </div>
+      <div className="sm:p-3 p-2 md:mx-auto w-[100%]">
         <div className="flex">
           <div
             className={
               theme === false
-                ? "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-black w-full"
-                : "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-white w-full"
+                ? " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-black w-full"
+                : " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-white w-full"
             }
           >
             {title}
           </div>
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%]">
-          <div
-            onClick={() => {
-              setModal(!modal);
-              filterItemModal(modalKey);
-            }}
-            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-8 mt-8 mb-4`}
-          ></div>{" "}
-        </div>
+        <div
+          onClick={() => {
+            setModal(!modal);
+            filterItemModal(modalKey);
+          }}
+          className={`flex sm:h-[260px] w-full h-[50vw] m-auto rotateImg ${float}`}
+        >
+          <div className={`w-full h-full ${image} rounded-sm`}></div>
+        </div>{" "}
       </div>
     </m.div>
   );
 };
 
 const ProjectCard2 = ({
-  colorStatus,
-  status,
   info,
   modalKey,
-  name,
   title,
-  description,
-  colorTxt,
-  colorBg,
   theme,
-  language,
   image,
   float,
-  linkP,
-  linkG,
   modal,
   setModal,
   setItemsModal,
@@ -110,48 +87,43 @@ const ProjectCard2 = ({
   };
   return (
     <m.div
-      initial={{ y: "35%", opacity: 0 }}
+      initial={{ y: "20%", opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       transition={{
-        duration: 1,
+        duration: 0.8,
         ease: "easeOut",
         type: "spring",
         delay: 0.1,
       }}
       className={
         theme === false
-          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-14 rounded-xl divShadow"
-          : "sm:w-[500px] w-[100%] bg-[#070707] mt-14 rounded-xl border-[1px] border-[#212121]"
+          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-8 rounded-sm divShadow"
+          : "sm:w-[500px] w-[100%] bg-[#070707] mt-8 rounded-sm border-[1px] border-[#212121]"
       }
     >
       {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="sm:p-8 sm:pb-0 p-5 pt-4 pb-0 md:mx-auto w-[100%]">
-        <div
-          className={`${colorTxt} font-semibold text-[min(4.5vw,20px)] lg:mt-0 flex`}
-        >
-          <div className="flex rounded-3xl w-full">{name}</div>
-        </div>
+      <div className="sm:p-3 p-2 md:mx-auto w-[100%]">
         <div className="flex">
           <div
             className={
               theme === false
-                ? "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-black w-full"
-                : "font-semibold text-[min(6.8vw,38px)] mt-4 mb-[-15px] text-white w-full"
+                ? " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-black w-full"
+                : " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-white w-full"
             }
           >
             {title}
           </div>
         </div>
         {/* DIV DEL LA IMAGEN----------------------- */}
-        <div className="w-[100%] ">
-          <div
-            onClick={() => {
-              setModal(!modal);
-              filterItemModal(modalKey);
-            }}
-            className={`flex sm:h-[260px] sm:w-[435px] h-[50vw] w-[82vw] ${image} ${float} m-auto rounded-md sm:my-8 mt-8 mb-4`}
-          ></div>{" "}
-        </div>
+        <div
+          onClick={() => {
+            setModal(!modal);
+            filterItemModal(modalKey);
+          }}
+          className={`flex sm:h-[260px] w-full h-[50vw] m-auto rotateImg ${float}`}
+        >
+          <div className={`w-full h-full ${image} rounded-sm`}></div>
+        </div>{" "}
       </div>
     </m.div>
   );
@@ -160,18 +132,13 @@ const ProjectCard2 = ({
 const FilterButtons = ({ label, icon }) => {
   return (
     <>
-      <div className="pt-[1px] text-[14.5px]">{label}</div>
+      <div className="pt-[1px] text-[min(4vw,14.5px)] font-medium">{label}</div>
     </>
   );
 };
 
 const Projects = ({
-  setToggle,
-  toggle,
-  active,
-  setActive,
   theme,
-  setTheme,
   language,
   setLanguage,
   itemsModal,
@@ -221,14 +188,6 @@ const Projects = ({
 
   return (
     <div>
-      <Head>
-        {language ? (
-          <title>CarlosBaso/Projects</title>
-        ) : (
-          <title>CarlosBaso/Proyectos</title>
-        )}
-      </Head>
-
       {modal ? (
         <div className="flex z-50">
           <div className="flex">
@@ -258,10 +217,10 @@ const Projects = ({
         <div className="w-[100%] mx-auto flex flex-col space">
           {/* DIV DEL HEADER----------------------- */}
           <m.div
-            initial={{ y: "35%", opacity: 0 }}
+            initial={{ y: "15%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.8,
               ease: "easeOut",
               type: "spring",
               delay: 0,
@@ -271,14 +230,14 @@ const Projects = ({
             <div
               className={
                 theme === false
-                  ? "font-semibold text-[min(8vw,48px)] text-black justify-center flex text-center"
-                  : "font-semibold text-[min(8vw,48px)] text-white justify-center flex text-center"
+                  ? "font-medium text-[min(8vw,48px)] text-black justify-center flex text-center"
+                  : "font-medium text-[min(8vw,48px)] text-white justify-center flex text-center"
               }
             >
               {language ? (
-                <div>Check out some of my latest projects.</div>
+                <div>Check out some of my latest projects</div>
               ) : (
-                <div>Mira algunos de mis últimos proyectos.</div>
+                <div>Mira algunos de mis últimos proyectos</div>
               )}
             </div>
 

@@ -14,8 +14,8 @@ const Languages = ({ theme, language }) => {
       <div
         className={
           theme === false
-            ? "text-white bg-black py-[6px] px-6 rounded-full inter text-[min(3.5vw,14px)] font-semibold"
-            : "text-black bg-white py-[6px] px-6 rounded-full inter text-[min(3.5vw,14px)] font-semibold"
+            ? "text-white bg-black py-[6px] px-6 rounded-full text-[min(3.5vw,14px)] font-medium"
+            : "text-black bg-white py-[6px] px-6 rounded-full text-[min(3.5vw,14px)] font-medium"
         }
       >
         {language}
@@ -64,8 +64,8 @@ const ModalScreen = ({
           <div
             className={
               theme === false
-                ? "bg-white w-[100%] m-auto rounded-xl md:px-10 px-4 md:py-6 py-4 text-black"
-                : "bg-[#111111] w-[100%] m-auto rounded-xl md:px-10 px-4 md:py-6 py-4 text-white"
+                ? "bg-white w-[100%] m-auto md:px-10 px-4 md:py-6 py-4 text-black space"
+                : "bg-[#111111] w-[100%] m-auto md:px-10 px-4 md:py-6 py-4 text-white space"
             }
           >
             {/* HEADER--------------------------------------------------------------- */}
@@ -73,23 +73,25 @@ const ModalScreen = ({
             {/* DIV DEL CONTENIDO--------------------------------------------------------------- */}
             <div className="flex xl:flex-row flex-col w-full h-full xl:px-4 xl:pb-6 pb-10">
               {/* DIV DE LA IZQUIERDA--------------------------------------------------------------- */}
-              <div className="xl:w-[45%] w-full h-full mt-4">
+              <div className="xl:w-[50%] w-full h-full mt-4">
                 <div
                   className={
                     theme === false
-                      ? "font-semibold text-[min(8vw,38px)] uppercase text-black mb-4 inter"
-                      : "font-semibold text-[min(8vw,38px)] uppercase text-white mb-4 inter"
+                      ? "font-semibold text-[min(8vw,35px)] uppercase text-black"
+                      : "font-semibold text-[min(8vw,35px)] uppercase text-white"
                   }
                 >
                   <div className="flex xl:mt-0 mt-6">{title}</div>
                 </div>
                 {/* DIV DE LA IMAGEN--------------------------------------------------------------- */}
-                <div className="pt-2">
+                <div className="py-4">
                   <a
                     href={linkP}
                     target="_blank"
-                    className={`mx-auto flex sm:h-[260px] sm:w-[450px] h-[55vw] w-[87vw] ${image} rounded-md sm:mb-6 mb-8`}
-                  ></a>{" "}
+                    className={`flex sm:h-[260px] md:w-full sm:w-[470px] w-full h-[50vw] m-auto `}
+                  >
+                    <div className={`w-full h-full ${image} rounded-sm`}></div>
+                  </a>{" "}
                 </div>
                 <div className="flex justify-between">
                   <div className="flex">
@@ -115,7 +117,7 @@ const ModalScreen = ({
                     </div>
                   </div>
                   {/* STATUS----------------------- */}
-                  <div className="text-[16px] inter flex xl:hidden mr-[14px]">
+                  <div className="text-[16px] flex xl:hidden mr-[14px]">
                     <div className="w-full flex justify-end">
                       <div
                         className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
@@ -136,7 +138,7 @@ const ModalScreen = ({
                 </div>
               </div>
               {/* DIV DE LA DERECHA--------------------------------------------------------------- */}
-              <div className="xl:w-[60%] w-full h-full xl:ml-[80px] xl:mr-3 inter flex flex-col xl:mt-[98px] mt-9 text-[min(4vw,16px)]">
+              <div className="xl:w-[60%] w-full h-full xl:ml-[80px] xl:mr-3 flex flex-col xl:mt-[75px] mt-9 text-[min(4vw,16px)]">
                 {language ? (
                   <div className="font-bold">Description</div>
                 ) : (
@@ -154,7 +156,7 @@ const ModalScreen = ({
                     )}
                     <div className="w-full flex justify-end pt-2">
                       <div
-                        className={`sm:w-[14px] sm:h-[14px] w-3 h-3 rounded-full ${colorStatus} flex my-auto mr-2`}
+                        className={`w-[min(3vw,12px)] h-[min(3vw,12px)] rounded-full ${colorStatus} flex my-auto mr-2`}
                       ></div>
                       <div
                         className={
@@ -163,7 +165,9 @@ const ModalScreen = ({
                             : " text-white flex "
                         }
                       >
-                        <div className="my-auto font-light">{status}</div>
+                        <div className="my-auto font-light text-[min(4vw,15px)]">
+                          {status}
+                        </div>
                       </div>
                     </div>
                   </div>

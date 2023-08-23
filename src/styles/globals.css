@@ -18,6 +18,15 @@
 }
 
 @font-face {
+  font-family: franklin;
+  src: url(../../public/WorkSans-VariableFont_wght.ttf);
+}
+
+.franklin {
+  font-family: franklin;
+}
+
+@font-face {
   font-family: space;
   src: url(../../public/SpaceGrotesk-VariableFont_wght.ttf);
 }
@@ -168,8 +177,6 @@
 
 .toggle {
   position: relative;
-  width: 27px;
-  height: 25px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -177,20 +184,20 @@
   justify-content: center;
   gap: 5px;
   transition-duration: 0.3s;
+  @apply h-[min(11.5vw,25px)] w-[min(11.5vw,27px)];
 }
 
 .toggle-checked {
   transition-duration: 0.3s;
   transform: rotate(180deg);
   position: relative;
-  width: 27px;
-  height: 25px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  @apply h-[min(11.5vw,25px)] w-[min(11.5vw,27px)];
 }
 
 .toggle:hover {
@@ -381,6 +388,11 @@
 }
 .rotateIcon {
   transform: rotate(90deg);
+}
+
+.buttonShadow3 {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .buttonShadow {
@@ -614,7 +626,6 @@
 .menuLight {
   background-color: #ffffff;
   margin: 0 auto;
-  border-radius: 10px;
   padding: 30px 20px;
   font-family: "Poppins", sans-serif;
   color: #000000;
@@ -625,12 +636,12 @@
   display: flex;
   flex-direction: column;
   margin: 0 15px;
+  @apply rounded-md;
 }
 
 .menuDark {
   background-color: #1d1e20;
   margin: 0 auto;
-  border-radius: 10px;
   padding: 30px 20px;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
@@ -641,6 +652,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 15px;
+  @apply rounded-md;
 }
 
 .selected1 {
@@ -648,8 +660,8 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
-  border-radius: 6px;
   color: #0055ff;
+  @apply rounded-sm;
 }
 
 .selectedHover1 {
@@ -663,8 +675,8 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
-  border-radius: 6px;
   color: #0055ff;
+  @apply rounded-sm;
 }
 
 .selected2 {
@@ -672,8 +684,8 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
-  border-radius: 6px;
   color: #ff5100;
+  @apply rounded-sm;
 }
 
 .selectedHover2 {
@@ -687,11 +699,11 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
-  border-radius: 6px;
+  @apply rounded-sm;
 }
 
 .filterButtons1 {
-  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto text-[min(4vw,14.5px)] py-[14px] bg-white rounded-sm flex buttonShadow3 cursor-pointer text-center;
 }
 
 .filterButtons1:hover {
@@ -702,11 +714,11 @@
 .filterActive1 {
   color: white;
   background-color: #ff5100;
-  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto text-[min(4vw,14.5px)] py-[14px] rounded-sm flex buttonShadow3 cursor-pointer text-center;
 }
 
 .filterButtons2 {
-  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] bg-white rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto text-[min(4vw,14.5px)] py-[14px] bg-white rounded-sm flex buttonShadow3 cursor-pointer text-center;
 }
 
 .filterButtons2:hover {
@@ -717,7 +729,7 @@
 .filterActive2 {
   color: white;
   background-color: #0055ff;
-  @apply md:w-[190px] w-[80vw] justify-center my-auto font-bold text-[14.5px] py-[14px] rounded-md flex buttonShadow cursor-pointer text-center;
+  @apply md:w-[190px] w-[80vw] justify-center my-auto text-[min(4vw,14.5px)] py-[14px] rounded-sm flex buttonShadow3 cursor-pointer text-center;
 }
 
 .activeColor1 {
@@ -749,7 +761,7 @@
 .toggleSwitch2 {
   position: relative;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: start;
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
@@ -765,9 +777,8 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   z-index: 2;
-  padding-left: 12px;
   transition-duration: 0.3s;
 }
 
@@ -803,8 +814,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
-  padding-left: 12px;
+  justify-content: center;
   z-index: 3;
 }
 
@@ -943,9 +953,28 @@
 }
 
 .gleamTxt {
-  color: #F6B10C;
+  color: #f6b10c;
 }
 
 .gleamBg {
-  background-color: #F6B10C;
+  background-color: #f6b10c;
+}
+
+.rotateImg {
+  transition: 0.5s ease;
+}
+
+.rotateImg:hover {
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+  transition: 0.5s ease;
+}
+
+.shadowP {
+  background: linear-gradient(
+    360deg,
+    rgb(16, 16, 16) 0%,
+    rgba(4, 77, 43, 0) 25%
+  );
 }

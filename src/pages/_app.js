@@ -15,6 +15,9 @@ const App = ({ Component, pageProps, router }) => {
 
   return (
     <div>
+      <Head>
+        <title>Carlos Baso</title>
+      </Head>
       <Menu
         toggle={toggle}
         setToggle={setToggle}
@@ -25,18 +28,18 @@ const App = ({ Component, pageProps, router }) => {
         language={language}
         setLanguage={setLanguage}
       />
-      
-        <Navbar
-          toggle={toggle}
-          setToggle={setToggle}
-          active={active}
-          setActive={setActive}
-          theme={theme}
-          setTheme={setTheme}
-          language={language}
-          setLanguage={setLanguage}
-        />
-      
+
+      <Navbar
+        toggle={toggle}
+        setToggle={setToggle}
+        active={active}
+        setActive={setActive}
+        theme={theme}
+        setTheme={setTheme}
+        language={language}
+        setLanguage={setLanguage}
+      />
+
       <Component
         key={router.pathname}
         {...pageProps}

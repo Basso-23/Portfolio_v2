@@ -50,21 +50,14 @@ const Contact = ({
           : "bg-[#111111] text-[#bcbcbc] "
       }
     >
-      <Head>
-        {language ? (
-          <title>CarlosBaso/Contact</title>
-        ) : (
-          <title>CarlosBaso/Contacto</title>
-        )}
-      </Head>
       {/* DIV DE LA PANTALLA---------------------------------------------- */}
       <div className="w-full bgColor min-h-[78vh] flex justify-center pt-2">
         {/* DIV DEL CONTENIDO---------------------------------------------- */}
         <div
           className={
             theme === false
-              ? "flex min-h-[78vh] w-[86%] space z-10 rounded-xl bg-white divShadow"
-              : "flex min-h-[78vh] w-[86%] space z-10 bg-black rounded-xl divShadow"
+              ? "flex min-h-[78vh] w-[86%] space z-10 rounded-lg bg-white divShadow"
+              : "flex min-h-[78vh] w-[86%] space z-10 bg-black rounded-lg divShadow"
           }
         >
           {/* DIV DE LAS FIGURAS----------------------- */}
@@ -128,10 +121,10 @@ const Contact = ({
           <div className="m-auto">
             {/* DIV DEL HEADER----------------------- */}
             <m.div
-              initial={{ y: "35%", opacity: 0 }}
+              initial={{ y: "10%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{
-                duration: 1,
+                duration: 0.8,
                 ease: "easeOut",
                 type: "spring",
                 delay: 0,
@@ -182,8 +175,8 @@ const Contact = ({
               <div
                 className={
                   theme === false
-                    ? "text-[#797979] px-2 lg:text-[20px] text-[min(4.5vw,20px)] font-light mt-[15px] text-center sm:px-10"
-                    : "text-[#ffffff] px-2 lg:text-[20px] text-[min(4.5vw,20px)] font-light mt-[15px] text-center sm:px-10"
+                    ? "text-[#000000] px-2 text-[min(4.5vw,19px)] font-light mt-[15px] text-center sm:px-10"
+                    : "text-[#ffffff] px-2 text-[min(4.5vw,19px)] font-light mt-[15px] text-center sm:px-10"
                 }
               >
                 {language ? (
@@ -210,8 +203,8 @@ const Contact = ({
                   target="_blank"
                   className={
                     theme === false
-                      ? "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
-                      : "font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-md flex buttonShadow cursor-pointer transitionButton"
+                      ? "font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] bg-[#0055ff] text-white rounded-sm flex buttonShadow cursor-pointer transitionButton"
+                      : "font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] bg-[#ff5100] text-white rounded-sm flex buttonShadow cursor-pointer transitionButton"
                   }
                 >
                   {language ? (
@@ -219,29 +212,30 @@ const Contact = ({
                   ) : (
                     <div className="pt-[1px]">Descargar Currículum</div>
                   )}
-                  <div className="rotateIcon ml-1 mt-[0.5px]">
-                    <MdOutlineTurnSlightLeft size={"25px"} />
+                  <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
+                    <MdOutlineTurnSlightLeft />
                   </div>
                 </a>
               </div>
+              {/* DIV DE LOS SOCIALS---------------------------------------------- */}
               <div className="gap-6 flex justify-center sm:mt-[6vh] sm:pb-[3vh] mt-[13.5vw] pb-[6.9vw] flex-wrap">
                 <a href="mailto:carlos.baso23@gmail.com" target="_blank">
-                  <AiFillGoogleCircle className="cursor-pointer text-[40px] click transition-all" />
+                  <AiFillGoogleCircle className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/carlos-baso-4b90b7270/"
                   target="_blank"
                 >
-                  <AiFillLinkedin className="cursor-pointer text-[40px] click transition-all" />
+                  <AiFillLinkedin className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a href="https://github.com/Basso-23" target="_blank">
-                  <AiOutlineGithub className="cursor-pointer  text-[40px] click transition-all" />
+                  <AiOutlineGithub className="cursor-pointer  text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a
                   href="https://www.instagram.com/carlos.basso_/"
                   target="_blank"
                 >
-                  <AiOutlineInstagram className="cursor-pointer text-[40px] click transition-all" />
+                  <AiOutlineInstagram className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
               </div>
             </m.div>
@@ -255,14 +249,18 @@ const Contact = ({
           className={
             theme === false
               ? "w-[86%] text-[#000000] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
-              : "w-[86%] text-[#bcbcbc] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
+              : "w-[86%] text-[#8b8b8b] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
           }
         >
-          <div className="w-full text-[16px] md:flex ">
+          <div className="w-full text-[min(3.5vw,14px)] md:flex">
             {language ? (
-              <div>©2023 CarlosBaso. All rights reserved.</div>
+              <div className="my-auto">
+                ©2023 CarlosBaso. All rights reserved.
+              </div>
             ) : (
-              <div>©2023 CarlosBaso. Todos los derechos reservados.</div>
+              <div className="my-auto">
+                ©2023 CarlosBaso. Todos los derechos reservados.
+              </div>
             )}
 
             <div className="xl:flex hidden">
@@ -270,13 +268,13 @@ const Contact = ({
                 onClick={() => {
                   setLanguage(true);
                 }}
-                className="ml-4 w-[35px] h-[23px] click transition-all cursor-pointer eng rounded-sm"
+                className="ml-4 w-[35px] h-[23px] transition-all cursor-pointer eng rounded-sm"
               ></div>
               <div
                 onClick={() => {
                   setLanguage(false);
                 }}
-                className="ml-3 w-[36px] h-[24px] click transition-all cursor-pointer esp rounded-sm"
+                className="ml-3 w-[36px] h-[24px] transition-all cursor-pointer esp rounded-sm"
               ></div>
             </div>
           </div>

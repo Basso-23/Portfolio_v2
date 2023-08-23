@@ -10,12 +10,12 @@ import Head from "next/head";
 }
 const Languages = ({ name, theme, setTheme }) => {
   return (
-    <div className="flex transition-all hover:scale-110 cursor-default">
+    <div className="flex transition-all">
       <div
         className={
           theme === false
-            ? "border-[2px] hover:border-[#000] text-[#000] hover:bg-black hover:text-white mt-0 py-2 px-8 rounded-full font-sans text-[min(3.5vw,14px)] inter"
-            : "border-[2px] hover:border-[#fff] text-[#fff] hover:bg-white hover:text-black mt-0 py-2 px-8 rounded-full font-sans text-[min(3.5vw,14px)] inter"
+            ? "bg-[#000000] text-[#ffffff] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
+            : "bg-[#ffffff] text-[#111111] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
         }
       >
         {name}
@@ -39,8 +39,8 @@ const CardSkills = ({
     <div
       className={
         theme === false
-          ? "bg-[#ffffff] mx-auto lg:w-[90%] w-[100%] flex rounded-lg mt-10 divShadow"
-          : "bg-[#070707] mx-auto lg:w-[90%] w-[100%] flex rounded-lg mt-10 border-[1px] border-[#212121]"
+          ? "bg-[#ffffff] mx-auto lg:w-[90%] w-[100%] flex rounded-sm mt-10 divShadow"
+          : "bg-[#070707] mx-auto lg:w-[90%] w-[100%] flex rounded-sm mt-10 border-[1px] border-[#212121]"
       }
     >
       <div className="flex">
@@ -52,12 +52,12 @@ const CardSkills = ({
       </div>
 
       <div className="w-[100%] flex flex-col md:px-0 px-8">
-        <div className="m-auto md:pr-10 md:pl-2 my-[40px]">
+        <div className="m-auto md:pr-10 md:pl-2 my-[35px]">
           <div
             className={
               theme === false
-                ? "text-[#000] border-b-2 border-[#797979] pb-2 font-bold text-[min(5vw,21px)] space"
-                : "text-[#fff] border-b-2 border-[#797979] pb-2 font-bold text-[min(5vw,21px)] space"
+                ? "text-[#000] font-semibold text-[min(5vw,21px)] space"
+                : "text-[#fff] font-semibold text-[min(5vw,21px)] space"
             }
           >
             {name}
@@ -65,8 +65,8 @@ const CardSkills = ({
           <div
             className={
               theme === false
-                ? "text-[min(4.5vw,16.5px)] pt-4 space text-[#000] font-light"
-                : "text-[min(4.5vw,16.5px)] pt-4 space text-[#fff] font-light"
+                ? "text-[min(4vw,17px)] pt-4 space text-[#000] font-light"
+                : "text-[min(4vw,17px)] pt-4 space text-[#fff] font-light"
             }
           >
             {description}
@@ -89,28 +89,26 @@ const Skills = ({
 }) => {
   return (
     <div>
-      <Head>
-        {language ? (
-          <title>CarlosBaso/Skills</title>
-        ) : (
-          <title>CarlosBaso/Habilidades</title>
-        )}
-      </Head>
+     
       <div
         className={
           theme === false ? "w-full bg-[#f9f9f9]" : "w-full bg-[#111111]"
         }
       >
         <m.div
-          initial={{ y: "35%", opacity: 0 }}
+          initial={{ y: "10%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: "easeOut",
             type: "spring",
             delay: 0,
           }}
-          className="w-[86%] lg:flex mx-auto xl:pt-[50px] pt-2 space text-[#797979]"
+          className={
+            theme === false
+              ? "w-[86%] lg:flex mx-auto xl:pt-[50px] pt-2 space text-[#000000]"
+              : "w-[86%] lg:flex mx-auto xl:pt-[50px] pt-2 space text-[#ffffff]"
+          }
         >
           <div className="lg:w-[50%] md:px-[46px] pb-[2.1vh]">
             <div
@@ -121,27 +119,24 @@ const Skills = ({
               }
             >
               {language ? (
-                <div>
-                  The skills I offer is specifially designed to meet your needs.
-                </div>
+                <div>This are some of my skills</div>
               ) : (
-                <div>
-                  Mis habilidades están diseñadas para cumplir tus necesidades.
-                </div>
+                <div>Estas son algunas de mis habilidades</div>
               )}
             </div>
 
             <div className="text-[min(4.5vw,19px)] font-light sm:pr-14">
               {language ? (
                 <div className="pt-2">
-                  Always willing to learn new tools and programming languages to
-                  quickly adapt to any project and challenge that comes my way.
+                  Always willing to learn new programming tools and technologies
+                  to quickly adapt to any project or challenge that comes my
+                  way.
                 </div>
               ) : (
                 <div className="pt-2">
-                  Siempre dispuesto a aprender nuevas herramientas y lenguajes
+                  Siempre dispuesto a aprender nuevas herramientas y tecnologías
                   de programación para adaptarme rápidamente a cualquier
-                  proyecto y desafío que se presente.
+                  proyecto o reto que se me presente.te.
                 </div>
               )}
             </div>
@@ -154,15 +149,15 @@ const Skills = ({
                   setActive("projects");
                   toggle === false ? "" : setToggle(!toggle);
                 }}
-                className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] btnColor text-white rounded-md flex buttonShadow transitionButton"
+                className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] btnColor text-white rounded-sm flex buttonShadow transitionButton"
               >
                 {language ? (
                   <div className="pt-[1px]">See My Projects</div>
                 ) : (
                   <div className="pt-[1px]">Ver Mis Proyectos</div>
                 )}
-                <div className="rotateIcon ml-1 mt-[0.5px]">
-                  <MdOutlineTurnSlightLeft size={"25px"} />
+                <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
+                  <MdOutlineTurnSlightLeft />
                 </div>
               </Link>
             </div>
@@ -172,25 +167,24 @@ const Skills = ({
             <div
               className={
                 theme === false
-                  ? "font-semibold text-[min(8vw,48px)] text-black sm:text-start text-center"
-                  : "font-semibold text-[min(8vw,48px)] text-white sm:text-start text-center"
+                  ? "font-semibold text-[min(8vw,48px)] text-black "
+                  : "font-semibold text-[min(8vw,48px)] text-white "
               }
             >
               {language ? (
-                <div>Some of my Knowledge</div>
+                <div>Some of the tools I use:</div>
               ) : (
-                <div>Algunos de mis Conocimientos</div>
+                <div>Algunas de las herramientas que uso:</div>
               )}
             </div>
 
             <div className="text-[min(4.5vw,19px)]">
-              <div className="flex flex-wrap gap-x-6 gap-y-4 mt-8 sm:justify-start justify-center">
+              <div className="flex flex-wrap gap-x-4 gap-y-4 mt-8 ">
                 <Languages theme={theme} name="HTML 5" />
                 <Languages theme={theme} name="CSS" />
                 <Languages theme={theme} name="JavaScript" />
                 <Languages theme={theme} name="Shopify" />
                 <Languages theme={theme} name="React JS" />
-                <Languages theme={theme} name="TypeScript" />
                 <Languages theme={theme} name="Tailwind CSS" />
                 <Languages theme={theme} name="Node JS" />
                 <Languages theme={theme} name="Firebase" />
@@ -209,18 +203,18 @@ const Skills = ({
           <div className="grid xl:grid-cols-2 grid-cols-1">
             <div>
               <m.div
-                initial={{ y: "35%", opacity: 0 }}
+                initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeOut",
                   type: "spring",
-                  delay: 0.2,
+                  delay: 0.1,
                 }}
               >
                 <CardSkills
                   theme={theme}
-                  name={language ? "Web Design 💻" : "Diseño Web 💻"}
+                  name={language ? "WEB DESIGN" : "DISEÑO WEB"}
                   image="web"
                   description={
                     language
@@ -232,20 +226,18 @@ const Skills = ({
               </m.div>
 
               <m.div
-                initial={{ y: "35%", opacity: 0 }}
+                initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeOut",
                   type: "spring",
-                  delay: 0.4,
+                  delay: 0.2,
                 }}
               >
                 <CardSkills
                   theme={theme}
-                  name={
-                    language ? "App Design 📱" : "Diseño de Aplicaciones 📱"
-                  }
+                  name={language ? "APP DESIGN" : "DISEÑO DE APLICACIONES"}
                   image="app"
                   description={
                     language
@@ -258,21 +250,21 @@ const Skills = ({
             </div>
             <div>
               <m.div
-                initial={{ y: "35%", opacity: 0 }}
+                initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeOut",
                   type: "spring",
-                  delay: 0.6,
+                  delay: 0.3,
                 }}
               >
                 <CardSkills
                   theme={theme}
                   name={
                     language
-                      ? "Strategy & Plannig 📃"
-                      : "Estrategia y Planificación 📃"
+                      ? "STRATEGY AND PLANNIG"
+                      : "ESTRATEGIA Y PLANIFICACIÓN"
                   }
                   image="strategy"
                   description={
@@ -285,21 +277,19 @@ const Skills = ({
               </m.div>
 
               <m.div
-                initial={{ y: "35%", opacity: 0 }}
+                initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeOut",
                   type: "spring",
-                  delay: 0.8,
+                  delay: 0.4,
                 }}
               >
                 <CardSkills
                   theme={theme}
                   name={
-                    language
-                      ? "Creative Solutions 🧩"
-                      : "Soluciones Creativas 🧩"
+                    language ? "CREATIVE SOLUTIONS" : "SOLUCIONES CREATIVAS"
                   }
                   image="brand"
                   description={

@@ -21,17 +21,11 @@ const Home = ({
 }) => {
   return (
     <div>
-      <Head>
-        {language ? (
-          <title>CarlosBaso/Portfolio</title>
-        ) : (
-          <title>CarlosBaso/Portafolio</title>
-        )}
-      </Head>
+      
       {/* DIV DE LA PANTALLA---------------------------------------------- */}
       <div className="w-full bgColor min-h-[78vh] flex justify-center pt-2">
         {/* DIV DEL CONTENIDO---------------------------------------------- */}
-        <div className=" flex min-h-[78vh] w-[86%] space z-10 btnColor rounded-xl">
+        <div className=" flex min-h-[78vh] w-[86%] space z-10 btnColor rounded-lg">
           {/* DIV DE LAS FIGURAS----------------------- */}
           <div className="w-[86%] min-h-[78vh] m-auto text-white space grid grid-cols-2 grid-row-2 absolute">
             {/* FIGURA DE LA IZQUIERDA-ARRIBA---------------------------------------------- */}
@@ -65,10 +59,10 @@ const Home = ({
           <div className="m-auto">
             {/* DIV DEL HEADER----------------------- */}
             <m.div
-              initial={{ y: "30%", opacity: 0 }}
+              initial={{ y: "10%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{
-                duration: 1,
+                duration: 0.8,
                 ease: "easeOut",
                 type: "spring",
                 delay: 0,
@@ -116,7 +110,7 @@ const Home = ({
               )}
 
               {/* DIV DEL HEADER PEQUEÑO----------------------- */}
-              <div className="text-[#ffffff] text-[min(2vw,20px)] font-light mt-[15px] text-center">
+              <div className="text-[#ffffff] text-[min(2vw,19px)] font-light mt-[15px] text-center">
                 {language ? (
                   <div className="md:flex-col md:flex hidden ">
                     <div>
@@ -158,14 +152,14 @@ const Home = ({
               </div>
 
               {/* DIV DEL BOTON---------------------------------------------- */}
-              <div className=" w-full justify-center flex sm:pt-[5vh] pt-[8vw] text-white">
+              <div className=" w-full justify-center flex text-white pt-8">
                 <Link
                   href={"/Projects"}
                   onClick={() => {
                     setActive("projects");
                     toggle === false ? "" : setToggle(!toggle);
                   }}
-                  className="font-bold text-[14.5px] pl-7 pr-5 py-[14px] bg-[#ffffff] text-[#000000] rounded-md flex buttonShadow cursor-pointer transitionButton"
+                  className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] bg-[#ffffff] text-[#000000] rounded-sm flex buttonShadow cursor-pointer transitionButton"
                 >
                   <div className="flex px-3">
                     {language ? (
@@ -174,7 +168,7 @@ const Home = ({
                       <div className="pt-[1px]">Ver Mis Trabajos</div>
                     )}
 
-                    <div className="rotateIcon ml-1 mt-[0.5px] text-[25px]">
+                    <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
                       <MdOutlineTurnSlightLeft />
                     </div>
                   </div>
@@ -184,22 +178,22 @@ const Home = ({
               {/* DIV DE LOS SOCIALS---------------------------------------------- */}
               <div className="gap-6 flex justify-center sm:mt-[6vh] sm:pb-[3vh] mt-[13.5vw] pb-[6.9vw] flex-wrap">
                 <a href="mailto:carlos.baso23@gmail.com" target="_blank">
-                  <AiFillGoogleCircle className="cursor-pointer text-[40px] click transition-all" />
+                  <AiFillGoogleCircle className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/carlos-baso-4b90b7270/"
                   target="_blank"
                 >
-                  <AiFillLinkedin className="cursor-pointer text-[40px] click transition-all" />
+                  <AiFillLinkedin className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a href="https://github.com/Basso-23" target="_blank">
-                  <AiOutlineGithub className="cursor-pointer  text-[40px] click transition-all" />
+                  <AiOutlineGithub className="cursor-pointer  text-[min(10vw,40px)] click transition-all" />
                 </a>
                 <a
                   href="https://www.instagram.com/carlos.basso_/"
                   target="_blank"
                 >
-                  <AiOutlineInstagram className="cursor-pointer text-[40px] click transition-all" />
+                  <AiOutlineInstagram className="cursor-pointer text-[min(10vw,40px)] click transition-all" />
                 </a>
               </div>
             </m.div>
@@ -213,14 +207,18 @@ const Home = ({
           className={
             theme === false
               ? "w-[86%] text-[#000000] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
-              : "w-[86%] text-[#bcbcbc] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
+              : "w-[86%] text-[#8b8b8b] mx-auto space lg:flex pt-[5vh] pb-[2.5vh]"
           }
         >
-          <div className="w-full text-[16px] md:flex ">
+          <div className="w-full text-[min(3.5vw,14px)] md:flex">
             {language ? (
-              <div>©2023 CarlosBaso. All rights reserved.</div>
+              <div className="my-auto">
+                ©2023 CarlosBaso. All rights reserved.
+              </div>
             ) : (
-              <div>©2023 CarlosBaso. Todos los derechos reservados.</div>
+              <div className="my-auto">
+                ©2023 CarlosBaso. Todos los derechos reservados.
+              </div>
             )}
 
             <div className="xl:flex hidden">
@@ -228,13 +226,13 @@ const Home = ({
                 onClick={() => {
                   setLanguage(true);
                 }}
-                className="ml-4 w-[35px] h-[23px] click transition-all cursor-pointer eng rounded-sm"
+                className="ml-4 w-[35px] h-[23px] transition-all cursor-pointer eng rounded-sm"
               ></div>
               <div
                 onClick={() => {
                   setLanguage(false);
                 }}
-                className="ml-3 w-[36px] h-[24px] click transition-all cursor-pointer esp rounded-sm"
+                className="ml-3 w-[36px] h-[24px] transition-all cursor-pointer esp rounded-sm"
               ></div>
             </div>
           </div>
