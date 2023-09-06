@@ -1,120 +1,45 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import { MdOutlineTurnSlightLeft } from "react-icons/md";
-import Footer from "@/components/Footer";
 import { motion as m } from "framer-motion";
-import alien from "../assets/alien.png";
+import Link from "next/link";
+import { BsInfoCircle, BsStarFill } from "react-icons/bs";
 
 {
-  /* ESTRUCTURA DEL CONTENEDOR DE LOS LENGUAJES----------------------- */
+  /* SKILLS STRUCTURE----------------------- */
 }
-const Languages = ({ name, theme }) => {
+const Skills = ({ title, description }) => {
   return (
-    <div className="flex ">
-      <div
-        className={
-          theme === false
-            ? "bg-[#000000] text-[#ffffff] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
-            : "bg-[#ffffff] text-[#111111] py-[6px] px-6 rounded-full font-medium text-[min(4vw,14px)]"
-        }
-      >
-        {name}
-      </div>
-    </div>
-  );
-};
+    <>
+      {/* SKILLS CONTAINER-------------------------------------------------------------------------------------------------------- */}
+      <div className=" aboutBg sm:max-w-[525px] w-full relative rounded-md flex flex-col px-10 pb-10 lg:mx-0 mx-auto">
+        {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+        <div className="xl:w-[450px] w-full fixedCenterX transition-all bottom-0 absolute flex">
+          <m.div
+            initial={{ width: "0%", opacity: 0 }}
+            animate={{ width: "100%", opacity: 1 }}
+            transition={{
+              duration: 0.65,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="light fixedCenterX absolute bottom-0 animationBorder"
+          ></m.div>
+        </div>
 
-{
-  /* ESTRUCTURA DEL CONTENEDOR DE LAS EXPERIENCIA----------------------- */
-}
-const CardExperience = ({
-  company,
-  title,
-  description,
-  date,
-  language,
-  language1,
-  language2,
-  language3,
-  language4,
-  theme,
-  link,
-}) => {
-  return (
-    <div className="lg:flex lg:flex-row flex-col lg:ml-[50px] md:ml-[15px] lg:flex-wrap mt-10">
-      <div
-        className={
-          theme
-            ? "font-bold ml-5 mb-4 text-[min(4.5vw,17px)] space text-[#06ff93]"
-            : "font-bold ml-5 mb-4 text-[min(4.5vw,17px)] space text-[#ff007b]"
-        }
-      >
-        {date}
-      </div>
-
-      <div className="flex">
-        {theme ? (
-          <div className="bg-[#06ff93] w-[min(4.5vw,15px)] h-[min(4.5vw,15px)] rounded-full absolute ml-[-18px]"></div>
-        ) : (
-          <div className="bg-[#ff007b] w-[min(4.5vw,15px)] h-[min(4.5vw,15px)] rounded-full absolute ml-[-18px]"></div>
-        )}
-
-        <div
-          className={
-            theme === false
-              ? "bg-[#bd171700] ml-10 text-black font-semibold text-[min(4.5vw,20px)] mt-[-4px] mr-[15px]"
-              : "bg-[#bd171700] ml-10 text-white font-semibold text-[min(4.5vw,20px)] mt-[-4px] mr-[15px]"
-          }
-        >
-          <div className="flex flex-wrap">
-            <div className="ml-[-20px] flex">
-              {title} @ {company}
-            </div>
-          </div>
-
-          <div className="ml-[-51.5px] font-normal">
-            <div className=" border-l-2 border-[#565656] text-[min(4.5vw,16px)]">
-              <div className="ml-[30px] pt-2 pb-12">
-                <div className="text-[min(4.5vw,17px)] sm:mr-14 font-light">
-                  {description}
-                </div>
-                <div className="flex flex-wrap gap-x-6 gap-y-4 mt-6">
-                  <Languages name={language1} theme={theme} />
-                  <Languages name={language2} theme={theme} />
-                  <Languages name={language3} theme={theme} />
-                </div>
-              </div>
-              <div className="ml-[30px] flex mt-[-15px] text-[min(4.5vw,17px)] font-light">
-                {language ? <div>Company:</div> : <div>Compañía:</div>}
-                <a
-                  href={link}
-                  target="_blank"
-                  className={
-                    theme === false
-                      ? "pl-2 cursor-pointer text-[#ff007b] underline"
-                      : "pl-2 cursor-pointer text-[#06ff93] underline"
-                  }
-                >
-                  {link}
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className=" w-[120px] h-[120px] rounded-full mx-auto bg-[#2A2A2A] mt-[-35px] borderMamalon flex">
+          <BsStarFill className=" m-auto text-[min(30vw,45px)] text-[#ffc020]" />
+        </div>
+        <div className=" w-full mt-6 mx-auto text-center font-bold text-[min(30vw,25px)]">
+          {title}
+        </div>
+        <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(3.8vw,16.5px)]">
+          {description}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-const About = ({
-  setToggle,
-  toggle,
-  setActive,
-  theme,
-  language,
-  setLanguage,
-}) => {
+const About = ({ language }) => {
   const [resume, setResume] = useState(
     "https://drive.google.com/file/d/1O2gmqslUaGKqcvuj-d_cBgdJP1XEpCw4/view?usp=drive_link"
   );
@@ -137,218 +62,398 @@ const About = ({
       );
     }
   }, [language]);
-
   return (
-    <div>
-      <div
-        className={
-          theme === false
-            ? "w-full bg-[#f9f9f9] pb-1"
-            : "w-full bg-[#111111] pb-1"
-        }
-      >
-        <div className="w-[86%] flex mx-auto pt-0 flex-col space">
-          {/* DIV DE LA MITAD DE ARRIBA----------------------- */}
+    <div className="w-full min-h-screen bg-[#07080b] flex px-3 relative pb-10">
+      {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
+      <div className=" flex flex-col w-full">
+        {/* TOP CONTAINER-------------------------------------------------------------------------------------------------------- */}
+        <div className="w-full grid lg:grid-cols-2 grid-cols-1 lg:mt-10 mt-20 relative radial2 pb-[145px]">
+          {/* TRANSPARENT TITLE-------------------------------------------------------------------------------------------------------- */}
+          <div className=" font-bold absolute fixedCenterXnY text-[min(20vw,400px)] text-[#95959507] xl:flex hidden tracking-[100px] text-center ">
+            ABOUT
+          </div>
+          {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+          <div className="xl:w-[450px] w-[85%] fixedCenterX transition-all bottom-0 absolute flex ">
+            <m.div
+              initial={{ width: "0%", opacity: 0 }}
+              animate={{ width: "100%", opacity: 1 }}
+              transition={{
+                duration: 0.65,
+                ease: "easeOut",
+                delay: 0.5,
+              }}
+              className="light fixedCenterX absolute bottom-0"
+            ></m.div>
+          </div>
+          {/* AFTER LG CONTENT-------------------------------------------------------------------------------------------------------- */}
+          {/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+          {/* VOICE AND SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
           <m.div
-            initial={{ y: "10%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
+            initial={{ y: "50px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
             transition={{
-              duration: 0.8,
+              duration: 0.5,
               ease: "easeOut",
-              type: "spring",
               delay: 0,
             }}
-            className={
-              theme === false
-                ? "grid lg:grid-cols-2 grid-cols-1 text-[#000000]"
-                : "grid lg:grid-cols-2 grid-cols-1 text-[#ffffff]"
-            }
+            className=" flex flex-col lg:hidden"
           >
-            {/* DIV DE LA IZQUIERDA ARRIBA----------------------- */}
-            <div className="w-[100%] flex py-10 pr-0">
-              <div
-                className={
-                  theme === false
-                    ? "m-auto faceBorder1 sm:h-[500px] sm:w-[500px] h-[89vw] w-[100vw] flex"
-                    : "m-auto faceBorder2 sm:h-[500px] sm:w-[500px] h-[89vw] w-[100vw] flex"
-                }
-              >
-                <div className="flex sm:h-[300px] sm:w-[300px] h-[60vw] w-[60vw] face containerFloat1 m-auto"></div>{" "}
+            <div className="mb-8 flex mx-auto">
+              {/* VOICE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className=" h-[min(9vw,40px)] flex gap-[3px]">
+                <div className="w-[1px] h-[10%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[20%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[35%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[60%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[45%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[50%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[34%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                <div className="w-[1px] h-[15%] bg-white my-auto"></div>
+              </div>
+              {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+                {language ? (
+                  <div>seeking new adventures</div>
+                ) : (
+                  <div>buscando nuevas aventuras</div>
+                )}
               </div>
             </div>
+            {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" uppercase font-bold text-[min(11vw,50px)] tracking-wide flex flex-col lg:hidden mx-auto text-center">
+              {language ? <div>Life is full of</div> : <div>La vida está</div>}
+              {language ? <div>endless</div> : <div>llena de</div>}
+              {language ? <div>possibilities.</div> : <div>posibilidades.</div>}
+            </div>
+          </m.div>
+          {/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-            {/* DIV DE LA DERECHA ARRIBA----------------------- */}
-            <div className="w-[100%] flex">
-              <div className="md:px-4 md:my-auto my-auto lg:ml-12 lg:w-[550px] w-[100%]">
-                <div
-                  className={
-                    theme === false
-                      ? "font-semibold text-[min(8vw,48px)] text-black lg:pt-0 pt-6 space"
-                      : "font-semibold text-[min(8vw,48px)] text-white lg:pt-0 pt-6 space"
-                  }
-                >
-                  {language ? (
-                    <div>More about me</div>
-                  ) : (
-                    <div>Más sobre mí</div>
-                  )}
+          {/* LEFT CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ y: "-75px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="w-[100%] flex lg:justify-end justify-center lg:pr-6"
+          >
+            {/* FACE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" aboutBg sm:max-w-[515px] w-full lg:mt-40 mt-20 relative rounded-md flex flex-col">
+              {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+              <div className="xl:w-[450px] w-full fixedCenterX transition-all bottom-0 absolute flex">
+                <m.div
+                  initial={{ width: "0%", opacity: 0 }}
+                  animate={{ width: "100%", opacity: 1 }}
+                  transition={{
+                    duration: 0.65,
+                    ease: "easeOut",
+                    delay: 0,
+                  }}
+                  className="light fixedCenterX absolute bottom-0 animationBorder"
+                ></m.div>
+              </div>
+
+              {/* PICTURE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className="sm:w-[81%] w-[90%] h-[min(100vw,500px)] magic mx-auto rounded-[5px] mt-[-30px] relative "></div>
+              <div className=" flex mx-auto mt-6 mb-5">
+                <BsInfoCircle className=" my-auto mr-3 text-[min(20vw,22px)]" />
+                {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+                <div className=" font-bold  text-[min(5vw,21px)] my-auto pb-1 pt-1">
+                  {language ? <div>About Me</div> : <div>Sobre Mí</div>}
                 </div>
+              </div>
 
-                <div className="text-[min(4.5vw,19px)] font-light">
-                  <div className="pt-2">
-                    {language ? (
-                      <div>
-                        Hello! I&apos;m Carlos Baso, a multidisciplinary
-                        software engineer based in Panama City.
-                      </div>
-                    ) : (
-                      <div>
-                        ¡Hola! Soy Carlos Baso, un ingeniero de software
-                        multidisciplinario viviendo en la ciudad de Panamá.
-                      </div>
-                    )}
+              {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className=" mx-auto text-[#b8b8b8] text-[min(3.8vw,16.5px)] mt-5 text-center md:px-14 px-6 mb-16 ">
+                {language ? (
+                  <div>
+                    I&apos;m a Software Engineer based in Panama City. Adaptability
+                    is my strength to face any situation.
                   </div>
-                  <div className="pt-4 text-[min(4.5vw,19px)] ">
-                    {language ? (
-                      <div>
-                        I feel more than comfortable learning from my teammates
-                        and using their experience to improve my skills.
-                        Adaptability is my strength to face any situation.
-                      </div>
-                    ) : (
-                      <div>
-                        Me siento mas que cómodo al aprender de mis compañeros
-                        de equipo y aprovechar su experiencia para mejorar mis
-                        habilidades. La adaptabilidad es mi fortaleza para
-                        enfrentar cualquier situación.
-                      </div>
-                    )}
+                ) : (
+                  <div>
+                    Soy un Ingeniero de Software viviendo en la ciudad de
+                    Panamá. La adaptabilidad es mi fortaleza para afrontar
+                    cualquier situación.
                   </div>
-                </div>
-
-                {/* DIV DEL BOTON See All Projects----------------------- */}
-                <div className="w-full flex pt-10 text-black">
-                  <Link
-                    href={"/Skills"}
-                    onClick={() => {
-                      setActive("skills");
-                      toggle === false ? "" : setToggle(!toggle);
-                    }}
-                    className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] btnColor text-white rounded-sm flex buttonShadow transitionButton"
-                  >
-                    {language ? (
-                      <div className="pt-[1px]">Check My Skills</div>
-                    ) : (
-                      <div className="pt-[1px]">Mis Habilidades</div>
-                    )}
-                    <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
-                      <MdOutlineTurnSlightLeft />
-                    </div>
-                  </Link>
-                </div>
+                )}
               </div>
             </div>
           </m.div>
 
-          {/* DIV DE LA MITAD DE ABAJO----------------------- */}
+          {/* RIGHT CONTAINER-------------------------------------------------------------------------------------------------------- */}
           <m.div
-            initial={{ y: "10%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
+            initial={{ y: "75px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
             transition={{
-              duration: 0.8,
+              duration: 0.4,
               ease: "easeOut",
-              type: "spring",
-              delay: 0.1,
+              delay: 0,
             }}
-            className={
-              theme === false
-                ? "grid lg:grid-cols-2 grid-cols-1 pt-20 pb-16 text-[#000000]"
-                : "grid lg:grid-cols-2 grid-cols-1 pt-20 pb-16 text-[#ffffff]"
-            }
+            className="w-[100%] flex flex-col lg:pl-6"
           >
-            {/* DIV DE ABAJO A LA IZQUIERDA----------------------- */}
-            <div className="w-[100%]">
-              <div className="w-[100%] flex">
-                <div className="md:px-4 md:my-auto m-auto lg:w-[500px] w-[100%]">
-                  <div
-                    className={
-                      theme === false
-                        ? "font-semibold text-[min(8vw,48px)] text-black space"
-                        : "font-semibold text-[min(8vw,48px)] text-white space"
-                    }
-                  >
-                    {language ? (
-                      <div>My experience</div>
-                    ) : (
-                      <div>Mi experiencia</div>
-                    )}
-                  </div>
-
-                  <div className="text-[min(4.5vw,19px)] font-light">
-                    <div className="pt-2 ">
-                      {language ? (
-                        <div>
-                          I would like to have the pleasure of working with
-                          companies within different sectors. I&apos;m always
-                          interested in new and exciting adventures.
-                        </div>
-                      ) : (
-                        <div>
-                          Me gusta tener el placer de trabajar con empresas
-                          dentro de distintos sectores. Siempre me interesan las
-                          nuevas y emocionantes aventuras.
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* DIV DEL BOTON See All Projects----------------------- */}
-                  <div className="w-full flex pt-10 text-black ">
-                    <a
-                      href={resume}
-                      target="_blank"
-                      className="font-bold text-[min(4vw,14.5px)] pl-7 pr-5 py-[14px] btnColor text-white rounded-sm flex buttonShadow transitionButton cursor-pointer"
-                    >
-                      {language ? (
-                        <div className="pt-[1px]">Download Resume</div>
-                      ) : (
-                        <div className="pt-[1px]">Descargar Currículum</div>
-                      )}
-                      <div className="rotateIcon ml-1 mt-[0.5px] text-[min(5vw,25px)]">
-                        <MdOutlineTurnSlightLeft />
-                      </div>
-                    </a>
-                  </div>
+            {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" my-auto flex flex-col ">
+              {/* VOICE AND SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className="mb-8 lg:flex hidden">
+                {/* VOICE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+                <div className=" h-[min(9vw,40px)] flex gap-[3px]">
+                  <div className="w-[1px] h-[10%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[20%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[35%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[60%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[45%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[50%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[34%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[15%] bg-white my-auto"></div>
                 </div>
+                {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+                <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+                  {language ? (
+                    <div>seeking new adventures</div>
+                  ) : (
+                    <div>buscando nuevas aventuras</div>
+                  )}
+                </div>
+              </div>
+
+              {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className=" uppercase font-bold text-[min(30vw,70px)] tracking-wide lg:flex lg:flex-col hidden">
+                {language ? (
+                  <div>Life is full of</div>
+                ) : (
+                  <div>La vida está</div>
+                )}
+                {language ? <div>endless</div> : <div>llena de</div>}
+                {language ? (
+                  <div>possibilities.</div>
+                ) : (
+                  <div>posibilidades.</div>
+                )}
+              </div>
+
+              {/* RESUME BUTTON-------------------------------------------------------------------------------------------------------- */}
+              <div className="flex lg:mx-0 mx-auto z-50">
+                <a
+                  href={resume}
+                  target="_blank"
+                  className="flex py-3 px-8 text-[min(3.8vw,15.5px)] mt-20 button2 "
+                >
+                  {language ? (
+                    <div>Download Resume</div>
+                  ) : (
+                    <div>Descargar Currículum</div>
+                  )}
+                </a>
+              </div>
+            </div>
+          </m.div>
+        </div>
+        {/* BOTTOM CONTAINER-------------------------------------------------------------------------------------------------------- */}
+        <div className="w-full grid lg:grid-cols-2 grid-cols-1 lg:pt-56 pt-40 lg:mb-72 mb-56 radial3 relative">
+          {/* TRANSPARENT TITLE-------------------------------------------------------------------------------------------------------- */}
+          <div className=" font-bold absolute fixedCenterXnY text-[min(20vw,400px)] text-[#95959507] xl:flex hidden tracking-[100px] text-center">
+            SKILLS
+          </div>
+          {/* AFTER LG CONTENT-------------------------------------------------------------------------------------------------------- */}
+          {/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+          {/* VOICE AND SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <div className="mb-8 flex lg:hidden mx-auto">
+            {/* VOICE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" h-[min(9vw,40px)] flex gap-[3px]">
+              <div className="w-[1px] h-[10%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[20%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[35%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[60%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[45%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[50%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[34%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+              <div className="w-[1px] h-[15%] bg-white my-auto"></div>
+            </div>
+            {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+              {language ? (
+                <div>improving all the time</div>
+              ) : (
+                <div>mejorando todo el tiempo</div>
+              )}
+            </div>
+          </div>
+          {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <div className=" uppercase font-bold text-[min(11vw,50px)] tracking-wide flex flex-col lg:hidden mx-auto text-center">
+            {language ? <div>keep learning</div> : <div>conocimiento</div>}
+            {language ? <div>to unlock</div> : <div>desbloquea</div>}
+            {language ? <div>power.</div> : <div>poder.</div>}
+          </div>
+          {/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+
+          {/* LEFT CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ y: "-50px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="w-[100%] flex lg:justify-end justify-center"
+          >
+            {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className="flex flex-col ">
+              {/* VOICE AND SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className="mb-8 lg:flex hidden">
+                {/* VOICE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+                <div className=" h-[min(9vw,40px)] flex gap-[3px]">
+                  <div className="w-[1px] h-[10%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[20%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[35%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[60%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[45%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[50%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[34%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[25%] bg-white my-auto"></div>
+                  <div className="w-[1px] h-[15%] bg-white my-auto"></div>
+                </div>
+                {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+                <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+                  {language ? (
+                    <div>improving all the time</div>
+                  ) : (
+                    <div>mejorando todo el tiempo</div>
+                  )}
+                </div>
+              </div>
+
+              {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+              <div className=" uppercase font-bold text-[min(30vw,70px)] tracking-wide lg:flex lg:flex-col hidden">
+                {language ? <div>keep learning</div> : <div>conocimiento</div>}
+                {language ? <div>to unlock</div> : <div>desbloquea</div>}
+                {language ? <div>power.</div> : <div>poder.</div>}
+              </div>
+
+              {/* SEE PROJECTS BUTTON-------------------------------------------------------------------------------------------------------- */}
+              <div className="hidden lg:flex lg:mx-0 mx-auto z-50">
+                <Link
+                  href={"/projects"}
+                  className="flex py-3 px-8 text-[min(3.8vw,15.5px)] mt-20 button"
+                >
+                  {language ? (
+                    <div>See Projects </div>
+                  ) : (
+                    <div>Ver Proyectos </div>
+                  )}
+                </Link>
+              </div>
+            </div>
+          </m.div>
+
+          {/* RIGHT CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ y: "50px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="w-[100%] flex flex-col lg:pl-14 gap-y-16 lg:mt-0 mt-20"
+          >
+            {/* SKILLS CONTAINER-------------------------------------------------------------------------------------------------------- */}
+            <div className=" aboutBg sm:max-w-[525px] w-full relative rounded-md flex flex-col px-10 pb-10 lg:mx-0 mx-auto">
+              <div className=" w-[120px] h-[120px] rounded-full mx-auto bg-[#2A2A2A] mt-[-35px] borderMamalon flex">
+                <BsStarFill className=" m-auto text-[min(30vw,45px)] text-[#ffc020]" />
+              </div>
+              <div className=" w-full mt-6 mx-auto text-center font-bold text-[min(30vw,25px)]">
+                {language ? (
+                  <div>Web. App. Design. </div>
+                ) : (
+                  <div>Diseño. Web. App. </div>
+                )}
+              </div>
+              <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(3.8vw,16.5px)]">
+                {language ? (
+                  <div>
+                    Creation of attractive and functional interfaces providing
+                    an excellent user experience. Using languages such as
+                    JavaScript, CSS, and HTML, as well as modern frameworks.
+                  </div>
+                ) : (
+                  <div>
+                    Creación de interfaces atractivas y funcionales
+                    proporcionando una excelente experiencia de usuario.
+                    Utilizando lenguajes como JavaScript, CSS, and HTML, así
+                    como frameworks modernos.
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* DIV DE LA DERECHA ABAJO----------------------- */}
-            <div className="w-[100%] bg-[#98147b00] lg:mt-[-40px] mt-[60px]">
-              <CardExperience
-                theme={theme}
-                language={language}
-                date={language ? "JUL 2022 - DEC 2022" : "JUL 2022 - DEC 2022"}
-                title="Front End Developer"
-                company="PaYa"
-                link="https://pidepaya.com/"
-                description={
-                  language
-                    ? "Managed and developed the functionalities and the front-end for a delivery app using JavaScript, Firebase for authentication, and frameworks such as React Native."
-                    : "Administré y desarrollé las funcionalidades y el front-end para un delivery app usando JavaScript, Firebase para autenticación y frameworks como React Native."
-                }
-                language1="React Native"
-                language2="Javascript"
-                language3="Firebase"
-              />
+            <Skills
+              title={
+                language
+                  ? "Strategy. Planning. Solutions."
+                  : "Estrategia. Planificación. Soluciones."
+              }
+              description={
+                language
+                  ? "Design and execute successful project strategies, managing resources and deadlines efficiently. Adjusting planning as needed, working effectively to achieve satisfactory results."
+                  : "Diseño y ejecución de estrategias exitosas de proyectos, gestionando recursos y plazos de manera eficiente. Ajustar la planificación según sea necesario, trabajando eficazmente para lograr resultados exitosos."
+              }
+            />
+            {/* SEE PROJECTS BUTTON AFTER LG-------------------------------------------------------------------------------------------------------- */}
+            <div className="lg:hidden flex lg:mx-0 mx-auto z-50">
+              <Link
+                href={"/projects"}
+                className="flex py-3 px-8 text-[min(3.8vw,15.5px)] mt-8 button"
+              >
+                {language ? (
+                  <div>See Projects </div>
+                ) : (
+                  <div>Ver Proyectos </div>
+                )}
+              </Link>
             </div>
           </m.div>
         </div>
       </div>
 
-      <Footer theme={theme} language={language} setLanguage={setLanguage} />
+      {/* FOOTER CONTAINER-------------------------------------------------------------------------------------------------------- */}
+      <div className="absolute bottom-0 fixedCenterX w-full transition-all border-t-[1px] flex border-[#ffffff16] justify-center py-5 footerBg">
+        <div className=" text-[min(3vw,13.5px)] my-auto text-center">
+          {language ? (
+            <div>©2023 CarlosBaso. All rights reserved.</div>
+          ) : (
+            <div>©2023 CarlosBaso. Todos los derechos reservados.</div>
+          )}
+        </div>
+        {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+        <div className="xl:w-[450px] w-full fixedCenterX transition-all top-0 absolute flex">
+          <m.div
+            initial={{ width: "0%", opacity: 0 }}
+            animate={{ width: "100%", opacity: 1 }}
+            transition={{
+              duration: 0.65,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="light fixedCenterX absolute top-0 animationBorder mt-[-0.5px]"
+          ></m.div>
+        </div>
+      </div>
     </div>
   );
 };
-
 export default About;

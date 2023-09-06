@@ -1,351 +1,263 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { projects } from "../components/IndexENG";
-import { projects2 } from "../components/IndexESP";
-import Footer from "@/components/Footer";
-import Head from "next/head";
 import { motion as m } from "framer-motion";
-import ModalScreen from "@/components/Modal";
+import Link from "next/link";
 
-const ProjectCard = ({
-  info,
-  modalKey,
+{
+  /* PROJECTS STRUCTURE----------------------- */
+}
+const Content = ({
   title,
-  theme,
+  description,
   image,
-  float,
-  modal,
-  setModal,
-  setItemsModal,
-}) => {
-  const filterItemModal = (keyItems) => {
-    const updatedItems = info.filter((item) => {
-      return item.modalKey === keyItems;
-    });
-    setItemsModal(updatedItems);
-  };
-  return (
-    <m.div
-      initial={{ y: "20%", opacity: 0 }}
-      animate={{ y: "0%", opacity: 1 }}
-      transition={{
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        delay: 0.1,
-      }}
-      className={
-        theme === false
-          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-8 rounded-sm divShadow"
-          : "sm:w-[500px] w-[100%] bg-[#070707] mt-8 rounded-sm border-[1px] border-[#212121]"
-      }
-    >
-      {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="sm:p-3 p-2 md:mx-auto w-[100%]">
-        <div className="flex">
-          <div
-            className={
-              theme === false
-                ? " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-black w-full"
-                : " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-white w-full"
-            }
-          >
-            {title}
-          </div>
-        </div>
-        {/* DIV DEL LA IMAGEN----------------------- */}
-        <div
-          onClick={() => {
-            setModal(!modal);
-            filterItemModal(modalKey);
-          }}
-          className={`flex sm:h-[260px] w-full h-[50vw] m-auto rotateImg ${float}`}
-        >
-          <div className={`w-full h-full ${image} rounded-sm`}></div>
-        </div>{" "}
-      </div>
-    </m.div>
-  );
-};
-
-const ProjectCard2 = ({
-  info,
-  modalKey,
-  title,
-  theme,
-  image,
-  float,
-  modal,
-  setModal,
-  setItemsModal,
-}) => {
-  const filterItemModal = (keyItems) => {
-    const updatedItems = info.filter((item) => {
-      return item.modalKey === keyItems;
-    });
-    setItemsModal(updatedItems);
-  };
-  return (
-    <m.div
-      initial={{ y: "20%", opacity: 0 }}
-      animate={{ y: "0%", opacity: 1 }}
-      transition={{
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        delay: 0.1,
-      }}
-      className={
-        theme === false
-          ? "sm:w-[500px] w-[100%] bg-[#fff] mt-8 rounded-sm divShadow"
-          : "sm:w-[500px] w-[100%] bg-[#070707] mt-8 rounded-sm border-[1px] border-[#212121]"
-      }
-    >
-      {/* DIV DEL LA INFORMACION----------------------- */}
-      <div className="sm:p-3 p-2 md:mx-auto w-[100%]">
-        <div className="flex">
-          <div
-            className={
-              theme === false
-                ? " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-black w-full"
-                : " font-semibold text-[min(6.5vw,30px)] mb-2 sm:ml-2 text-white w-full"
-            }
-          >
-            {title}
-          </div>
-        </div>
-        {/* DIV DEL LA IMAGEN----------------------- */}
-        <div
-          onClick={() => {
-            setModal(!modal);
-            filterItemModal(modalKey);
-          }}
-          className={`flex sm:h-[260px] w-full h-[50vw] m-auto rotateImg ${float}`}
-        >
-          <div className={`w-full h-full ${image} rounded-sm`}></div>
-        </div>{" "}
-      </div>
-    </m.div>
-  );
-};
-
-const FilterButtons = ({ label, icon }) => {
-  return (
-    <>
-      <div className="pt-[1px] text-[min(4vw,14.5px)] font-medium">{label}</div>
-    </>
-  );
-};
-
-const Projects = ({
-  theme,
+  button,
+  bottomBorder,
+  number,
+  link,
   language,
-  setLanguage,
-  itemsModal,
-  setItemsModal,
+  new_,
 }) => {
-  const [filterActive, setFilterActive] = useState("");
-  const [filterButtons, setFilterButtons] = useState("");
-  const [actualizar, setActualizar] = useState(true);
-
-  useEffect(() => {
-    if (theme === false) {
-      setFilterActive("filterActive2");
-      setFilterButtons("filterButtons2");
-    }
-    if (theme === true) {
-      setFilterActive("filterActive1");
-      setFilterButtons("filterButtons1");
-    }
-  }, [theme]);
-
-  const [info, setInfo] = useState(projects);
-  const [items, setItems] = useState(projects);
-  const [modal, setModal] = useState(false);
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  useEffect(() => {
-    if (language === true) {
-      setItems(projects);
-      setInfo(projects);
-    }
-    if (language === false) {
-      setItems(projects2);
-      setInfo(projects2);
-    }
-  }, [language]);
-
-  useEffect(() => {
-    setActiveFilter("All");
-  }, [language]);
-
-  const filterItem = (idItems) => {
-    const updatedItems = info.filter((item) => {
-      return item.id === idItems;
-    });
-    setItems(updatedItems);
-  };
-
   return (
-    <div>
-      {modal ? (
-        <div className="flex z-50">
-          <div className="flex">
-            {itemsModal.map((item) => (
-              <ModalScreen
-                key={item.key}
-                {...item}
-                theme={theme}
-                language={language}
-                modal={modal}
-                setModal={setModal}
-              />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
-
+    <div className="grid xl:grid-cols-2 grid-cols-1 w-full mt-56 mx-auto relative">
+      {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
       <div
-        className={
-          theme === false
-            ? "w-full bg-[#f9f9f9] pb-20"
-            : "w-full bg-[#111111] pb-20"
-        }
+        className={`xl:w-[450px] w-[60%] fixedCenterX transition-all bottom-0 absolute flex mb-[-100px] ${bottomBorder}`}
       >
-        <div className="w-[100%] mx-auto flex flex-col space">
-          {/* DIV DEL HEADER----------------------- */}
-          <m.div
-            initial={{ y: "15%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-              type: "spring",
-              delay: 0,
-            }}
-            className="mx-auto w-[100%] md:pt-10 pt-2 sm:mb-12 mb-6"
+        <m.div
+          initial={{ width: "0%", opacity: 0 }}
+          animate={{ width: "100%", opacity: 1 }}
+          transition={{
+            duration: 0.65,
+            ease: "easeOut",
+            delay: 0.5,
+          }}
+          className="light2 fixedCenterX absolute bottom-0"
+        ></m.div>
+      </div>
+      <div className="w-full h-[min(58vw,500px)] flex xl:justify-end">
+        {/* IMAGE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+        <div
+          className={`md:w-[750px] xl:h-[450px] w-full h-full ${image} my-auto xl:mx-0 mx-auto relative`}
+        >
+          <div
+            className={` absolute top-0 xl:ml-[20px] ml-[10px] xl:mt-[-50px] mt-[-35px] font-bold ${new_} text-[min(2.5vw,12px)] uppercase`}
           >
-            <div
-              className={
-                theme === false
-                  ? "font-medium text-[min(8vw,48px)] text-black justify-center flex text-center"
-                  : "font-medium text-[min(8vw,48px)] text-white justify-center flex text-center"
-              }
-            >
-              {language ? (
-                <div>Check out some of my latest projects</div>
-              ) : (
-                <div>Mira algunos de mis últimos proyectos</div>
-              )}
-            </div>
-
-            {/* DIV DE LOS BOTONES----------------------- */}
-            <div className="mt-10 self-end w-full justify-center flex mb-4">
-              <div className="flex md:flex-row text-black md:gap-10 gap-6 justify-center flex-wrap flex-col">
-                <div
-                  onClick={() => {
-                    setItems(info);
-                    setActiveFilter("All");
-                    setActualizar(!actualizar);
-                  }}
-                  className={
-                    activeFilter === "All"
-                      ? `${filterActive}`
-                      : `${filterButtons}`
-                  }
-                >
-                  <FilterButtons label={language ? "All" : "Todos"} />
-                </div>
-                <div
-                  onClick={() => {
-                    filterItem(10);
-                    setActiveFilter("Web");
-                    setActualizar(!actualizar);
-                  }}
-                  className={
-                    activeFilter === "Web"
-                      ? `${filterActive}`
-                      : `${filterButtons} `
-                  }
-                >
-                  <FilterButtons
-                    label={language ? "Web Design" : "Diseño Web"}
-                  />
-                </div>
-
-                <div
-                  onClick={() => {
-                    filterItem(20);
-                    setActiveFilter("Backend");
-                    setActualizar(!actualizar);
-                  }}
-                  className={
-                    activeFilter === "Backend"
-                      ? `${filterActive}`
-                      : `${filterButtons}`
-                  }
-                >
-                  <FilterButtons label={language ? "Software" : "Software"} />
-                </div>
-
-                <div
-                  onClick={() => {
-                    filterItem(30);
-                    setActiveFilter("App");
-                    setActualizar(!actualizar);
-                  }}
-                  className={
-                    activeFilter === "App"
-                      ? `${filterActive}`
-                      : `${filterButtons}`
-                  }
-                >
-                  <FilterButtons label={language ? "Others" : "Otros"} />
-                </div>
-              </div>
-            </div>
-          </m.div>
-
-          {/* CARTAS DE LOS PROYECTOS----------------------- */}
-          {actualizar ? (
-            <div className=" w-full flex flex-wrap gap-x-16 justify-center px-4">
-              {items.map((item) => (
-                <ProjectCard
-                  key={item.key}
-                  {...item}
-                  theme={theme}
-                  language={language}
-                  modal={modal}
-                  setModal={setModal}
-                  setItemsModal={setItemsModal}
-                  info={info}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className=" w-full flex flex-wrap gap-x-16 justify-center px-4">
-              {items.map((item) => (
-                <ProjectCard2
-                  key={item.key}
-                  {...item}
-                  theme={theme}
-                  language={language}
-                  modal={modal}
-                  setModal={setModal}
-                  setItemsModal={setItemsModal}
-                  info={info}
-                />
-              ))}
-            </div>
-          )}
+            {language ? "new" : "nuevo"}
+          </div>
         </div>
       </div>
 
-      <Footer theme={theme} language={language} setLanguage={setLanguage} />
+      <m.div
+        initial={{ x: "-100px", opacity: 0 }}
+        animate={{ x: "0px", opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeOut",
+          delay: 0,
+        }}
+        className=" w-full flex flex-col xl:pl-16 xl:px-0 xl:text-start text-center my-auto xl:pt-0 pt-6"
+      >
+        <div className="flex flex-col xl:w-[min(50vw,500px)] relative">
+          {/* NUMBER CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ marginRight: "100px", opacity: 0 }}
+            animate={{ marginRight: "0px", opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+              delay: 0.25,
+            }}
+            className=" font-bold absolute right-0 fixedCenterY text-[min(75vw,400px)] text-[#95959511] xl:mr-[-50px] lg:mr-20 md:mr-10"
+          >
+            {number}
+          </m.div>
+          <div className="text-[min(9vw,45px)] font-bold ">{title}</div>
+
+          <div className="text-[min(3.8vw,16.5px)] text-[#b8b8b8] mt-6 xl:w-auto sm:px-0 sm:w-[500px] w-full mx-auto z-50">
+            {description}
+          </div>
+
+          {/* SEE PROJECT BUTTON-------------------------------------------------------------------------------------------------------- */}
+          <div className="flex xl:mx-0 mx-auto z-50">
+            <Link
+              href={`/${link}`}
+              className={`flex py-3 px-8 text-[min(3.8vw,15.5px)] xl:mt-20 mt-16 ${button}`}
+            >
+              <div className="px-2">
+                {language ? "See Project" : "Ver Proyecto"}
+              </div>
+            </Link>
+          </div>
+        </div>
+      </m.div>
     </div>
   );
 };
 
+const Projects = ({ language }) => {
+  return (
+    <div className="w-full min-h-screen radial3 flex flex-col px-3 relative lg:pb-72 pb-64">
+      <div className=" flex flex-col radial2 relative sm:py-48 py-28 xl:mb-[-50px] mb-[-75px]">
+        {/* TRANSPARENT TITLE-------------------------------------------------------------------------------------------------------- */}
+        <div className=" font-bold absolute fixedCenterXnY text-[min(20vw,400px)] z-10 text-[#95959507] xl:flex hidden">
+          PROJECTS
+        </div>
+        {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+        <div className="w-[90%] fixedCenterX transition-all bottom-0 absolute flex">
+          <m.div
+            initial={{ width: "0%", opacity: 0 }}
+            animate={{ width: "100%", opacity: 1 }}
+            transition={{
+              duration: 0.65,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="light2 fixedCenterX absolute bottom-0"
+          ></m.div>
+        </div>
+
+        {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
+        <div className=" mx-auto font-bold text-[min(10vw,50px)] flex flex-wrap text-center relative sm:px-16 pt-10 ">
+          {/* TOP LEFT CORNER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ scale: 0.2, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+
+              delay: 0,
+            }}
+            className=" w-10 h-10 absolute top-0 left-0 border border-r-0 border-b-0"
+          ></m.div>
+          {/* TOP RIGHT CORNER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ scale: 0.2, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+
+              delay: 0,
+            }}
+            className=" w-10 h-10 absolute top-0 right-0 border border-l-0 border-b-0"
+          ></m.div>
+          {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+          <m.div
+            initial={{ y: "50px", opacity: 0 }}
+            animate={{ y: "0px", opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className=" flex flex-wrap gap-x-4"
+          >
+            <div className=" mx-auto">
+              {" "}
+              {language ? <div>Check out my </div> : <div>Mira mis</div>}
+            </div>
+            <div className=" active mx-auto">
+              {language ? (
+                <div>latest projects. </div>
+              ) : (
+                <div>últimos proyectos.</div>
+              )}
+            </div>
+          </m.div>
+        </div>
+        {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
+        <m.div
+          initial={{ y: "50px", opacity: 0 }}
+          animate={{ y: "0px", opacity: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+            delay: 0.1,
+          }}
+          className=" mx-auto text-[min(3.8vw,17px)] mt-6 text-[#b8b8b8] text-center"
+        >
+          {language ? (
+            <div>
+              Here you will find some of my personal and clients projects that
+              I&apos;ve created.{" "}
+            </div>
+          ) : (
+            <div>
+              Aquí encontrarás algunos de mis proyectos personales y de clientes
+              que he creado.
+            </div>
+          )}
+        </m.div>
+      </div>
+      {/* PROJECTS CONTAINER-------------------------------------------------------------------------------------------------------- */}
+      <Content
+        number="3"
+        title={language ? "Barber Shop" : "Barbería"}
+        image="barber"
+        description={
+          language
+            ? "This website showcases the essence of a modern barbershop steeped in tradition. With a clean, user-friendly design that welcomes visitors to discover your business."
+            : "Este sitio web muestra la esencia de una barbería moderna llena de tradición. Con un diseño limpio y fácil de usar que invita a los visitantes a descubrir su negocio."
+        }
+        link="project-3"
+        button="button2"
+        bottomBorder=""
+        language={language}
+        new_="button4"
+      />
+      <Content
+        number="2"
+        title="Gleam AI"
+        image="gleam"
+        description={
+          language
+            ? "Gleam AI is a platform that brings together the most popular artificial intelligence tools. Using the OpenAI and ReplicateAI APIs here you can find all the best AIs in one place."
+            : "Gleam AI es una plataforma que junta las más populares herramientas de inteligencia artificial. Utilizando APIs de OpenAI y ReplicateAI aquí puedes encontrar las mejores IAs en un solo lugar."
+        }
+        link="project-2"
+        button="button2"
+        bottomBorder=""
+        language={language}
+        new_="hidden"
+      />
+      <Content
+        number="1"
+        title={language ? "Portfolio" : "Portafolio"}
+        image="portfolio_main"
+        description={
+          language
+            ? "This is my portfolio, in where I showcase all the projects I've done. In here you can also find my CV and get to know me a little bit better."
+            : "Este es mi portafolio, en donde muestro todos los proyectos que he realizado. Aquí también puedes encontrar mi CV y conocerme un poco mejor."
+        }
+        link="project-1"
+        button="button"
+        bottomBorder="hidden"
+        language={language}
+        new_="hidden"
+      />
+      {/* FOOTER CONTAINER-------------------------------------------------------------------------------------------------------- */}
+      <div className="absolute bottom-0 fixedCenterX w-full transition-all border-t-[1px] flex border-[#ffffff16] justify-center py-5 footerBg">
+        <div className=" text-[min(3vw,13.5px)] my-auto text-center">
+          {language ? (
+            <div>©2023 CarlosBaso. All rights reserved.</div>
+          ) : (
+            <div>©2023 CarlosBaso. Todos los derechos reservados.</div>
+          )}
+        </div>
+        {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
+        <div className="xl:w-[450px] w-full fixedCenterX transition-all top-0 absolute flex">
+          <m.div
+            initial={{ width: "0%", opacity: 0 }}
+            animate={{ width: "100%", opacity: 1 }}
+            transition={{
+              duration: 0.65,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            className="light fixedCenterX absolute top-0 animationBorder mt-[-0.5px]"
+          ></m.div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default Projects;
