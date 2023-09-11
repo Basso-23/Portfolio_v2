@@ -74,14 +74,15 @@ const Contact = ({ language }) => {
               }}
               className=" flex flex-col"
             >
-              <div className=" flex flex-wrap mx-auto gap-x-5">
+              <div className=" flex flex-wrap mx-auto justify-center">
                 {" "}
-                <div className=" mx-auto">
-                  {language ? <div>You have a</div> : <div>¿Tienes un</div>}{" "}
-                </div>{" "}
-                <div className=" mx-auto neon">
-                  {language ? <div>project?</div> : <div>proyecto?</div>}
-                </div>
+                {language ? <div>You have a </div> : <div>¿Tienes un</div>}{" "}
+                {language ? (
+                  <div className="neon mx-5">project</div>
+                ) : (
+                  <div className=" neon mx-5">proyecto</div>
+                )}
+                {language ? <div>in mind? </div> : <div>en mente?</div>}{" "}
               </div>
             </m.div>
 
@@ -94,7 +95,7 @@ const Contact = ({ language }) => {
                 ease: "easeOut",
                 delay: 0.4,
               }}
-              className="text-[min(4vw,17.5px)] text-[#b8b8b8] mt-6 px-4 font-normal"
+              className="text-[min(4vw,18px)] text-[#b8b8b8] mt-6 px-4 font-normal"
             >
               {language ? (
                 <div>Reach out to me and I will get back to you shortly.</div>

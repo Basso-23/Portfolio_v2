@@ -31,7 +31,7 @@ const Skills = ({ title, description }) => {
         <div className=" w-full mt-6 mx-auto text-center font-bold text-[min(30vw,25px)]">
           {title}
         </div>
-        <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(3.8vw,16.5px)]">
+        <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(4vw,17.5px)]">
           {description}
         </div>
       </div>
@@ -94,7 +94,7 @@ const About = ({ language }) => {
             transition={{
               duration: 0.5,
               ease: "easeOut",
-              delay: 0,
+              delay: 0.2,
             }}
             className=" flex flex-col lg:hidden"
           >
@@ -138,7 +138,7 @@ const About = ({ language }) => {
             transition={{
               duration: 0.4,
               ease: "easeOut",
-              delay: 0,
+              delay: 0.2,
             }}
             className="w-[100%] flex lg:justify-end justify-center lg:pr-6"
           >
@@ -159,21 +159,21 @@ const About = ({ language }) => {
               </div>
 
               {/* PICTURE CONTAINER-------------------------------------------------------------------------------------------------------- */}
-              <div className="sm:w-[81%] w-[90%] h-[min(100vw,500px)] magic mx-auto rounded-[5px] mt-[-30px] relative "></div>
-              <div className=" flex mx-auto mt-6 mb-5">
+              <div className="sm:w-[84%] w-[84%] h-[min(110vw,550px)] magic mx-auto rounded-[5px] mt-[-30px] relative "></div>
+              <div className=" flex mx-auto mt-7 mb-5">
                 <BsInfoCircle className=" my-auto mr-3 text-[min(20vw,22px)]" />
                 {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
-                <div className=" font-bold  text-[min(5vw,21px)] my-auto pb-1 pt-1">
+                <div className=" font-bold  text-[min(5vw,21px)] sm:pb-1 sm:pt-0 pt-1">
                   {language ? <div>About Me</div> : <div>Sobre Mí</div>}
                 </div>
               </div>
 
               {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
-              <div className=" mx-auto text-[#b8b8b8] text-[min(3.8vw,16.5px)] mt-5 text-center md:px-14 px-6 mb-16 ">
+              <div className=" mx-auto text-[#b8b8b8] text-[min(4vw,17.5px)] mt-5 text-center md:px-14 px-6 mb-16 ">
                 {language ? (
                   <div>
-                    I&apos;m a Software Engineer based in Panama City. Adaptability
-                    is my strength to face any situation.
+                    I&apos;m a Software Engineer based in Panama City.
+                    Adaptability is my strength to face any situation.
                   </div>
                 ) : (
                   <div>
@@ -193,7 +193,7 @@ const About = ({ language }) => {
             transition={{
               duration: 0.4,
               ease: "easeOut",
-              delay: 0,
+              delay: 0.2,
             }}
             className="w-[100%] flex flex-col lg:pl-6"
           >
@@ -216,7 +216,7 @@ const About = ({ language }) => {
                   <div className="w-[1px] h-[15%] bg-white my-auto"></div>
                 </div>
                 {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
-                <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+                <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase">
                   {language ? (
                     <div>seeking new adventures</div>
                   ) : (
@@ -282,7 +282,7 @@ const About = ({ language }) => {
               <div className="w-[1px] h-[15%] bg-white my-auto"></div>
             </div>
             {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
-            <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase ">
+            <div className=" my-auto ml-4 font-bold active text-[min(5vw,17px)] uppercase">
               {language ? (
                 <div>improving all the time</div>
               ) : (
@@ -383,7 +383,7 @@ const About = ({ language }) => {
                   <div>Diseño. Web. App. </div>
                 )}
               </div>
-              <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(3.8vw,16.5px)]">
+              <div className=" w-full mt-8 mx-auto text-center text-[#b8b8b8] text-[min(4vw,17.5px)]">
                 {language ? (
                   <div>
                     Creation of attractive and functional interfaces providing

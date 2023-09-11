@@ -42,7 +42,7 @@ html {
   background-image: url(../assets/magic.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: bottom;
 }
 
 .bannerShadowTop {
@@ -116,7 +116,7 @@ html {
   --enhanced-glow-color: rgb(39, 231, 0);
   --btn-color: rgb(0, 100, 15);
   border: 0.15em solid var(--glow-color);
-  padding: 1em 3em;
+  padding: 1em 2.7em;
   color: var(--glow-color);
   background-color: var(--btn-color);
   outline: none;

@@ -18,7 +18,7 @@ const Project3 = ({ language }) => {
         href="/project-2"
         className=" w-[min(13vw,55px)]  h-[min(13vw,55px)] border top-0 right-0 sm:mr-10 mr-4 mt-10 flex justify-center items-center button5 text-[min(4vw,16px)] absolute"
       >
-        <AiOutlineArrowRight/>
+        <AiOutlineArrowRight />
       </Link>
 
       {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
@@ -44,7 +44,7 @@ const Project3 = ({ language }) => {
           {/* CONTENT CONTAINER-------------------------------------------------------------------------------------------------------- */}
           <div className=" flex flex-col xl:mx-0 mx-auto my-auto md:w-[575px] w-full">
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -60,14 +60,14 @@ const Project3 = ({ language }) => {
               )}
             </m.div>
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
                 ease: "easeOut",
                 delay: 0.1,
               }}
-              className="w-full mt-6 text-[min(3.8vw,16.5px)] text-[#b8b8b8]"
+              className="w-full mt-6 text-[min(4vw,17.5px)] text-[#b8b8b8]"
             >
               {language ? (
                 <div>
@@ -85,7 +85,7 @@ const Project3 = ({ language }) => {
             </m.div>
 
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -98,7 +98,7 @@ const Project3 = ({ language }) => {
             </m.div>
             {/* TOOLS CONTAINER-------------------------------------------------------------------------------------------------------- */}
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -113,7 +113,7 @@ const Project3 = ({ language }) => {
               <Tools name="Tailwind CSS" />
             </m.div>
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -125,7 +125,7 @@ const Project3 = ({ language }) => {
               {/* VISIT WEBSITE BUTTON-------------------------------------------------------------------------------------------------------- */}
               <div className="flex xl:mx-0 mx-auto">
                 <a
-                  href="https://gleam-wine.vercel.app/"
+                  href="https://barbershop-woad.vercel.app/"
                   target="_blank"
                   className="flex py-3 px-8 text-[min(3.8vw,15.5px)] xl:mt-24 mt-28 button first-letter"
                 >
@@ -140,9 +140,9 @@ const Project3 = ({ language }) => {
               <div className="flex xl:mt-24 mt-16 xl:ml-16 xl:mx-0 mx-auto">
                 <AiOutlineGithub className="mr-3 my-auto text-[min(8vw,35px)] " />{" "}
                 <a
-                  href="https://github.com/Basso-23/Gleam-AI"
+                  href="https://github.com/Basso-23/Barbershop"
                   target="_blank"
-                  className=" my-auto mr-2 hover:underline text-[min(4vw,16px)]"
+                  className=" my-auto mr-2 hover:underline text-[min(4vw,16px)] sm:pt-0 pt-1"
                 >
                   {language ? <div>View Code</div> : <div>Ver Código</div>}
                 </a>

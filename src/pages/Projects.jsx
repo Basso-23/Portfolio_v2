@@ -71,7 +71,7 @@ const Content = ({
           </m.div>
           <div className="text-[min(9vw,45px)] font-bold ">{title}</div>
 
-          <div className="text-[min(3.8vw,16.5px)] text-[#b8b8b8] mt-6 xl:w-auto sm:px-0 sm:w-[500px] w-full mx-auto z-50">
+          <div className="text-[min(4vw,17.5px)] text-[#b8b8b8] mt-6 xl:w-auto sm:px-0 sm:w-[500px] w-full mx-auto z-50">
             {description}
           </div>
 
@@ -142,12 +142,12 @@ const Projects = ({ language }) => {
           ></m.div>
           {/* TITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
           <m.div
-            initial={{ y: "50px", opacity: 0 }}
+            initial={{ y: "25px", opacity: 0 }}
             animate={{ y: "0px", opacity: 1 }}
             transition={{
-              duration: 0.6,
+              duration: 0.5,
               ease: "easeOut",
-              delay: 0,
+              delay: 0.3,
             }}
             className=" flex flex-wrap gap-x-4"
           >
@@ -166,24 +166,24 @@ const Projects = ({ language }) => {
         </div>
         {/* SUBTITLE CONTAINER-------------------------------------------------------------------------------------------------------- */}
         <m.div
-          initial={{ y: "50px", opacity: 0 }}
+          initial={{ y: "25px", opacity: 0 }}
           animate={{ y: "0px", opacity: 1 }}
           transition={{
-            duration: 0.6,
+            duration: 0.5,
             ease: "easeOut",
-            delay: 0.1,
+            delay: 0.4,
           }}
-          className=" mx-auto text-[min(3.8vw,17px)] mt-6 text-[#b8b8b8] text-center"
+          className=" mx-auto text-[min(4vw,17px)] mt-6 text-[#b8b8b8] text-center"
         >
           {language ? (
             <div>
               Here you will find some of my personal and clients projects that
-              I&apos;ve created.{" "}
+              I&apos;ve done.{" "}
             </div>
           ) : (
             <div>
               Aquí encontrarás algunos de mis proyectos personales y de clientes
-              que he creado.
+              que he realizado.
             </div>
           )}
         </m.div>

@@ -50,7 +50,7 @@ const Project2 = ({ language }) => {
           {/* CONTENT CONTAINER-------------------------------------------------------------------------------------------------------- */}
           <div className=" flex flex-col xl:mx-0 mx-auto my-auto md:w-[575px] w-full">
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -66,14 +66,14 @@ const Project2 = ({ language }) => {
               )}
             </m.div>
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
                 ease: "easeOut",
                 delay: 0.1,
               }}
-              className="w-full mt-6 text-[min(3.8vw,16.5px)] text-[#b8b8b8]"
+              className="w-full mt-6 text-[min(4vw,17.5px)] text-[#b8b8b8]"
             >
               {language ? (
                 <div>
@@ -93,7 +93,7 @@ const Project2 = ({ language }) => {
             </m.div>
 
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -106,7 +106,7 @@ const Project2 = ({ language }) => {
             </m.div>
             {/* TOOLS CONTAINER-------------------------------------------------------------------------------------------------------- */}
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -121,7 +121,7 @@ const Project2 = ({ language }) => {
               <Tools name="Tailwind CSS" />
             </m.div>
             <m.div
-              initial={{ y: "25px", opacity: 0 }}
+              initial={{ y: "-25px", opacity: 0 }}
               animate={{ y: "0px", opacity: 1 }}
               transition={{
                 duration: 0.35,
@@ -150,7 +150,7 @@ const Project2 = ({ language }) => {
                 <a
                   href="https://github.com/Basso-23/Gleam-AI"
                   target="_blank"
-                  className=" my-auto mr-2 hover:underline text-[min(4vw,16px)]"
+                  className=" my-auto mr-2 hover:underline text-[min(4vw,16px)] sm:pt-0 pt-1"
                 >
                   {language ? <div>View Code</div> : <div>Ver Código</div>}
                 </a>

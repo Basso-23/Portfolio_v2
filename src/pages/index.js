@@ -73,7 +73,7 @@ const Home = ({ language }) => {
               ease: "easeOut",
               delay: 0.5,
             }}
-            className="text-[min(4vw,17.5px)] text-[#b8b8b8] mt-6"
+            className="text-[min(4vw,18px)] text-[#b8b8b8] mt-6"
           >
             {language ? (
               <div>Find out how I&apos;ve applied my passion for technology!</div>

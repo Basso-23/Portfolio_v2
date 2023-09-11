@@ -40,7 +40,7 @@ const Navbar = ({ setLanguage, language }) => {
           <Hamburger toggled={isOpen} toggle={setIsOpen} size={25} />
         </div>
 
-        <div className=" xl:flex w-full justify-center m-auto gap-20 hidden text-[min(4vw,15.5px)]">
+        <div className=" xl:flex w-full justify-center m-auto gap-24 hidden text-[min(4vw,15.5px)]">
           <Link
             href={"/"}
             className={
@@ -50,7 +50,6 @@ const Navbar = ({ setLanguage, language }) => {
             }
           >
             {language ? <div>Home</div> : <div>Inicio</div>}{" "}
-            <BsChevronDown className=" mt-[6px] ml-1" />
           </Link>
           <Link
             href={"/about"}
@@ -61,7 +60,6 @@ const Navbar = ({ setLanguage, language }) => {
             }
           >
             {language ? <div>About</div> : <div>Sobre mí</div>}{" "}
-            <BsChevronDown className=" mt-[6px] ml-1" />
           </Link>
           <Link
             href={"/projects"}
@@ -72,7 +70,6 @@ const Navbar = ({ setLanguage, language }) => {
             }
           >
             {language ? <div>Projects</div> : <div>Proyectos</div>}{" "}
-            <BsChevronDown className=" mt-[6px] ml-1" />
           </Link>
           <Link
             href={"/contact"}
@@ -83,7 +80,6 @@ const Navbar = ({ setLanguage, language }) => {
             }
           >
             {language ? <div>Contact</div> : <div>Contacto</div>}{" "}
-            <BsChevronDown className=" mt-[6px] ml-1" />
           </Link>
         </div>
         {/* BOTTOM BORDER HIGHLIGHT-------------------------------------------------------------------------------------------------------- */}
@@ -129,7 +125,6 @@ const Navbar = ({ setLanguage, language }) => {
                   <div className=" ml-2">
                     {language ? <div>Home</div> : <div>Incio</div>}{" "}
                   </div>{" "}
-                  <BsChevronDown className=" mt-[6px] ml-1" />
                 </m.div>
               </Link>
               <Link
@@ -156,7 +151,6 @@ const Navbar = ({ setLanguage, language }) => {
                   <div className=" ml-2">
                     {language ? <div>About</div> : <div>Sobre mí</div>}{" "}
                   </div>{" "}
-                  <BsChevronDown className=" mt-[6px] ml-1" />
                 </m.div>
               </Link>
               <Link
@@ -183,7 +177,6 @@ const Navbar = ({ setLanguage, language }) => {
                   <div className=" ml-2">
                     {language ? <div>Projects</div> : <div>Proyectos</div>}{" "}
                   </div>{" "}
-                  <BsChevronDown className=" mt-[6px] ml-1" />
                 </m.div>
               </Link>
               <Link
@@ -210,7 +203,6 @@ const Navbar = ({ setLanguage, language }) => {
                   <div className=" ml-2">
                     {language ? <div>Contact</div> : <div>Contacto</div>}{" "}
                   </div>{" "}
-                  <BsChevronDown className=" mt-[6px] ml-1" />
                 </m.div>
               </Link>
             </div>
