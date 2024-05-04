@@ -52,9 +52,9 @@ const Navbar = ({ setLanguage, language }) => {
             {language ? <div>Home</div> : <div>Inicio</div>}{" "}
           </Link>
           <Link
-            href={"/about"}
+            href={"/About"}
             className={
-              pathname === "/about"
+              pathname === "/About"
                 ? " flex active cursor-pointer"
                 : " flex inactive cursor-pointer"
             }
@@ -62,9 +62,9 @@ const Navbar = ({ setLanguage, language }) => {
             {language ? <div>About</div> : <div>Sobre mí</div>}{" "}
           </Link>
           <Link
-            href={"/projects"}
+            href={"/Projects"}
             className={
-              pathname === "/projects"
+              pathname === "/Projects"
                 ? " flex active cursor-pointer"
                 : " flex inactive cursor-pointer"
             }
@@ -72,9 +72,9 @@ const Navbar = ({ setLanguage, language }) => {
             {language ? <div>Projects</div> : <div>Proyectos</div>}{" "}
           </Link>
           <Link
-            href={"/contact"}
+            href={"/Contact"}
             className={
-              pathname === "/contact"
+              pathname === "/Contact"
                 ? " flex active cursor-pointer"
                 : " flex inactive cursor-pointer"
             }

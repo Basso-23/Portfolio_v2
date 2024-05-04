@@ -6,8 +6,8 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 {
   /* TOOLS STRUCTURE----------------------- */
 }
-const Tools = ({ name }) => {
-  return <div className=" py-3 px-6 bg-[#000000] rounded-lg">{name}</div>;
+const Tools = ({ name, color, bg }) => {
+  return <div className={`py-3 px-6 rounded-lg ${bg} ${color}`}>{name}</div>;
 };
 
 const Project1 = ({ language }) => {
@@ -18,7 +18,7 @@ const Project1 = ({ language }) => {
         href="/project-2"
         className=" w-[min(13vw,55px)]  h-[min(13vw,55px)] border top-0 left-0 sm:ml-10 ml-4 mt-10 flex justify-center items-center button5 text-[min(4vw,16px)] absolute"
       >
-        <AiOutlineArrowLeft/>
+        <AiOutlineArrowLeft />
       </Link>
       {/* MAIN CONTAINER-------------------------------------------------------------------------------------------------------- */}
       <div className="grid xl:grid-cols-2 grid-cols-1 w-full mt-36 px-3">
@@ -71,8 +71,8 @@ const Project1 = ({ language }) => {
               {language ? (
                 <div>
                   This is my portfolio, in where I showcase all the projects
-                  I&apos;ve done. In here you can also find my CV and get to know me
-                  a little bit better.
+                  I&apos;ve done. In here you can also find my CV and get to
+                  know me a little bit better.
                 </div>
               ) : (
                 <div>
@@ -104,12 +104,24 @@ const Project1 = ({ language }) => {
                 ease: "easeOut",
                 delay: 0.3,
               }}
-              className=" mt-6 flex sm:gap-6 gap-3 xl:mx-0 mx-auto xl:justify-start justify-center flex-wrap text-[min(3.5vw,16px)] text-[#b8b8b8] z-50"
+              className=" mt-6 flex sm:gap-6 gap-3 xl:mx-0 mx-auto xl:justify-start justify-center flex-wrap text-[min(3.5vw,16px)]  z-50"
             >
-              <Tools name="JavaScript" />
-              <Tools name="React JS" />
-              <Tools name="Next JS" />
-              <Tools name="Tailwind CSS" />
+              <Tools
+                name="JavaScript"
+                color={"text-black"}
+                bg={"bg-[#ECDB1C]"}
+              />
+              <Tools
+                name="React JS"
+                color={"text-[#00D1F7]"}
+                bg={"bg-[#0E1E2F]"}
+              />
+              <Tools
+                name="Tailwind CSS"
+                color={"text-[#00D1F7]"}
+                bg={"bg-white"}
+              />
+              <Tools name="Next JS" color={"text-white"} bg={"bg-black"} />
             </m.div>
             <m.div
               initial={{ y: "-25px", opacity: 0 }}

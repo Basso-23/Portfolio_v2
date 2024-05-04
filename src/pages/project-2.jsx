@@ -6,8 +6,8 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 {
   /* TOOLS STRUCTURE----------------------- */
 }
-const Tools = ({ name }) => {
-  return <div className=" py-3 px-6 bg-[#000000] rounded-lg">{name}</div>;
+const Tools = ({ name, color, bg }) => {
+  return <div className={`py-3 px-6 rounded-lg ${bg} ${color}`}>{name}</div>;
 };
 
 const Project2 = ({ language }) => {
@@ -115,10 +115,22 @@ const Project2 = ({ language }) => {
               }}
               className=" mt-6 flex sm:gap-6 gap-3 xl:mx-0 mx-auto xl:justify-start justify-center flex-wrap text-[min(3.5vw,16px)] text-[#b8b8b8] z-50"
             >
-              <Tools name="JavaScript" />
-              <Tools name="React JS" />
-              <Tools name="Next JS" />
-              <Tools name="Tailwind CSS" />
+              <Tools
+                name="JavaScript"
+                color={"text-black"}
+                bg={"bg-[#ECDB1C]"}
+              />
+              <Tools
+                name="React JS"
+                color={"text-[#00D1F7]"}
+                bg={"bg-[#0E1E2F]"}
+              />
+              <Tools
+                name="Tailwind CSS"
+                color={"text-[#00D1F7]"}
+                bg={"bg-white"}
+              />
+              <Tools name="Next JS" color={"text-white"} bg={"bg-black"} />
             </m.div>
             <m.div
               initial={{ y: "-25px", opacity: 0 }}
