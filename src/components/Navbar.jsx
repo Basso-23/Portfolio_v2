@@ -128,12 +128,12 @@ const Navbar = ({ setLanguage, language }) => {
                 </m.div>
               </Link>
               <Link
-                href={"/about"}
+                href={"/About"}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
                 className={
-                  pathname === "/about"
+                  pathname === "/About"
                     ? " flex active cursor-pointer borderOption w-full justify-center py-4"
                     : " flex inactive cursor-pointer borderOption w-full justify-center py-4"
                 }
@@ -154,12 +154,12 @@ const Navbar = ({ setLanguage, language }) => {
                 </m.div>
               </Link>
               <Link
-                href={"/projects"}
+                href={"/Projects"}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
                 className={
-                  pathname === "/projects"
+                  pathname === "/Projects"
                     ? " flex active cursor-pointer borderOption w-full justify-center py-4"
                     : " flex inactive cursor-pointer borderOption w-full justify-center py-4"
                 }
@@ -180,12 +180,12 @@ const Navbar = ({ setLanguage, language }) => {
                 </m.div>
               </Link>
               <Link
-                href={"/contact"}
+                href={"/Contact"}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
                 className={
-                  pathname === "/contact"
+                  pathname === "/Contact"
                     ? " flex active cursor-pointer borderOption w-full justify-center py-4"
                     : " flex inactive cursor-pointer borderOption w-full justify-center py-4"
                 }
